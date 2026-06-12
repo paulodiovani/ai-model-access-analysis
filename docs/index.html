@@ -12,7 +12,7 @@
             darkMode: 'class',
         }
     </script>
-    <!-- Marked.js (Updated to version 9+ which uses a different global variable) -->
+    <!-- Marked.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- GitHub Markdown CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
@@ -49,7 +49,7 @@
         <aside class="w-72 h-full bg-slate-900 text-slate-300 flex flex-col shadow-2xl">
             <div class="p-6 flex justify-between items-center">
                 <h1 class="text-white text-xl font-bold flex items-center gap-2">
-                    <span>🚀</span> Analysis
+                    <span>🚀</span> AI Access Analysis
                 </h1>
                 <button id="close-menu" class="text-slate-400 hover:text-white p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -78,7 +78,7 @@
     <aside class="hidden lg:flex w-72 bg-slate-900 text-slate-300 flex-col h-full shadow-xl z-20">
         <div class="p-6">
             <h1 class="text-white text-xl font-bold flex items-center gap-2">
-                <span>🚀</span> Access Analysis
+                <span>🚀</span> AI Access Analysis
             </h1>
             <p class="text-xs text-slate-400 mt-1">Agentic Value Index</p>
         </div>
@@ -100,9 +100,10 @@
         </div>
     </aside>
 
+    <!-- MAIN CONTENT AREA -->
     <main id="main-bg" class="flex-1 overflow-y-auto relative bg-slate-100 dark:bg-slate-900">
         <div class="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-slate-800 shadow-sm">
-            <h1 class="text-slate-900 dark:text-white font-bold">🚀 Access Analysis</h1>
+            <h1 class="text-slate-900 dark:text-white font-bold">🚀 AI Access Analysis</h1>
             <button id="open-menu" class="p-2 bg-slate-100 dark:bg-slate-700 rounded-md">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
@@ -141,7 +142,6 @@
                 const response = await fetch(`content/${fileName}`);
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const text = await response.text();
-                // Use marked.parse() as a function instead of marked() directly to support v9+
                 contentDiv.innerHTML = marked.parse(text);
             } catch (e) {
                 contentDiv.innerHTML = `<div class="text-center py-20"><div class="text-5xl mb-4">❌</div><h3 class="text-xl font-bold">Error loading content</h3><p>${e.message}</p></div>`;
