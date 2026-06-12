@@ -8,7 +8,7 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 
 * **The Model Class:** Open Flagships (*Qwen 3.7 Max, GLM 5.1, MiMo V2.5 Pro*)  
 * **What your $20 gets you:** The subscription is only $10/month, leaving you with $10 to spare.  
-* **Why it's \#1:** It uses a layered cap system that gives you **$60 of monthly computational value** ($12 per 5 hours / $30 per week) for that $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models like Qwen 3.7 Max before hitting a ceiling.
+* **Why it's \#1:** It uses a layered cap system that gives you **$60 of monthly computational value** ($12 per 5 hours / $30 per week) for that $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models like Qwen 3.7 Max before hitting a ceiling. The base $10 subscription is also the top pick in the [$10 Budget Analysis](#10-rankings.md) — your extra $10 here acts as a buffer for heavier usage or optional credit top-ups.
 
 ### **🥈 2\. GPT Codex / OpenAI (ChatGPT Plus)**
 
