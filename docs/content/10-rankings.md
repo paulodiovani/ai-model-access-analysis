@@ -48,4 +48,4 @@ Here is the definitive ranking from **best value for money (Best)** to **least c
 
 ---
 
-*Note: Many providers that appear in the [$20 Budget Analysis](#rankings.md) — including ChatGPT Plus ($20), Google AI Pro ($19.99), Claude Pro ($20), and Z.ai GLM ($18) — have subscriptions that exceed the $10 threshold. If your budget can stretch, those options open up significantly more possibilities.*
+*Note: Many providers that appear in the [$20 Budget Analysis](#20-rankings.md) — including ChatGPT Plus ($20), Google AI Pro ($19.99), Claude Pro ($20), and Z.ai GLM ($18) — have subscriptions that exceed the $10 threshold. If your budget can stretch, those options open up significantly more possibilities.*

@@ -57,7 +57,7 @@
             </div>
             <nav class="flex-1 px-3 space-y-1">
                 <p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Analysis Documents</p>
-                <a href="#" data-file="rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
+                <a href="#" data-file="20-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
                     <span class="text-lg">💰</span><span class="text-sm font-medium">$20 Budget Analysis</span>
                 </a>
                 <a href="#" data-file="10-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
@@ -87,7 +87,7 @@
         </div>
         <nav class="flex-1 px-3 space-y-1">
             <p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Analysis Documents</p>
-            <a href="#" data-file="rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
+            <a href="#" data-file="20-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
                 <span class="text-lg">💰</span><span class="text-sm font-medium">$20 Budget Analysis</span>
             </a>
             <a href="#" data-file="10-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
@@ -187,7 +187,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
-            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]`)) ? hash : 'rankings.md';
+            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]`)) ? hash : '20-rankings.md';
             updateActiveState(initialFile);
             loadPage(initialFile);
         });
