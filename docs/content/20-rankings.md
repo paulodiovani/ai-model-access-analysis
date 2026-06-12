@@ -8,13 +8,13 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 
 * **The Model Class:** Open Flagships (*Qwen 3.7 Max, GLM 5.1, MiMo V2.5 Pro*)  
 * **What your $20 gets you:** The subscription is only $10/month, leaving you with $10 to spare.  
-* **Why it's \#1:** It uses a layered cap system that gives you **$60 of monthly computational value** ($12 per 5 hours / $30 per week) for that $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models like Qwen 3.7 Max before hitting a ceiling.
+* **Why it's \#1:** It uses a layered cap system that gives you **$60 of monthly computational value** ($12 per 5 hours / $30 per week) for that $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models like Qwen 3.7 Max before hitting a ceiling. The base $10 subscription is also the top pick in the [$10 Budget Analysis](#10-rankings.md) — your extra $10 here acts as a buffer for heavier usage or optional credit top-ups.
 
 ### **🥈 2\. GPT Codex / OpenAI (ChatGPT Plus)**
 
 * **The Model Class:** Proprietary Flagships (*GPT-5.5, GPT-5.4 Thinking*)  
 * **What your $20 gets you:** Exactly covers the standard monthly subscription.  
-* **Why it's \#2:** OpenAI heavily subsidizes the Plus tier. The roughly 160 messages per 3 hours allowance means an active developer can feed massive file indexes into the workspace all day long. If you routed that same volume through raw API tokens, it would cost hundreds of dollars, making this a massive value loop for a flat twenty.
+* **Why it's \#2:** OpenAI heavily subsidizes the Plus tier. The roughly 160 messages per 3 hours allowance means an active developer can feed massive file indexes into the workspace all day long. If you routed that same volume through raw API tokens, it would cost hundreds of dollars, making this a massive value loop for a flat twenty. For lighter use, OpenAI also offers **ChatGPT Go at $8/month** with ~100 messages per 5 hours on GPT-5.2 Instant — see the [$10 Budget Analysis](#10-rankings.md) for details.
 
 ### **🥉 3\. Z.ai / GLM (Coding Plan Lite)**
 

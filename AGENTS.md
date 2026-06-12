@@ -46,7 +46,7 @@ When updating a provider entry, find their official pricing or documentation pag
 
 ## 📁 Project Structure
 
-- `docs/content/rankings.md` — $20 budget analysis
+- `docs/content/20-rankings.md` — $20 budget analysis
 - `docs/content/free-rankings.md` — Free tier analysis
 - `docs/content/about.md` — About the project
 - `docs/index.html` — SPA entry point
