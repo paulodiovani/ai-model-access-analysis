@@ -1,6 +1,8 @@
 ## **Comparative Analysis of AI Model Access Providers (Normalized to a $10 Budget)**
 
-This analysis evaluates what a tight $10 monthly budget can get you in the AI model access landscape. Several providers offer entry-level subscriptions or pay-as-you-go options that fit this budget, and some deliver surprising value at this price point.
+This analysis evaluates subscription-based AI access plans within a tight $10 monthly budget. Several providers offer entry-level subscriptions at this price point, and some deliver surprising value.
+
+> **Scope:** Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers are not listed here — see the [Free Rankings](#free-rankings.md) for those.
 
 Here is the definitive ranking from **best value for money (Best)** to **least capability per dollar (Worst)**.
 
@@ -22,17 +24,11 @@ Here is the definitive ranking from **best value for money (Best)** to **least c
 * **What your $10 gets you:** Costs $8/month, leaving $2 in your pocket.  
 * **Why it's \#3:** For $8, you get roughly 10x the free tier — approximately 100 messages with GPT-5.2 Instant per 5-hour window, plus file uploads, image generation, and an expanded context window. GPT-5.2 Instant is fast and capable for everyday tasks like writing, learning, and problem-solving. It's not the full flagship GPT-5.2 (that's Plus at $20), but it's a meaningful upgrade over free. The catch: OpenAI is rolling out ads in the Go tier, so your experience will include sponsored content.
 
-### **4\. OpenCode Zen (Pay-As-You-Go Credits)**
-
-* **The Model Class:** Closed & Open Flagships (*GPT-5.5, GPT-5.4, GPT-5.3 Codex*)  
-* **What your $10 gets you:** Exactly $10 of raw, zero-markup wholesale API credits.  
-* **Why it's \#4:** Zen gives you access to the most expensive proprietary models at wholesale prices with **zero throttling or lockouts**. The transparency is unmatched — you see exactly what each token costs. The catch is that $10 doesn't go far with frontier models. A single heavy prompt with GPT-5.5 and an 80K context can cost over $1.00. You'll get maybe a few hours of serious coding before the balance runs dry. But for targeted, focused tasks — code reviews, specific refactors, quick prototypes — it's incredibly flexible.
-
-### **5\. Grok (SuperGrok Lite)**
+### **4\. Grok (SuperGrok Lite)**
 
 * **The Model Class:** Social & Search Flagships (*Grok 4 — Basic*)  
 * **What your $10 gets you:** Exactly covers the $10/month Lite subscription.  
-* **Why it drops to \#5:** The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions and quick lookups — but it lacks the deep reasoning and coding capabilities that the other options on this list provide.
+* **Why it drops to \#4:** The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions and quick lookups — but it lacks the deep reasoning and coding capabilities that the other options on this list provide.
 
 ## **Summary Comparison Table**
 
@@ -41,10 +37,9 @@ Here is the definitive ranking from **best value for money (Best)** to **least c
 | **\#1** | **OpenCode Go** | Qwen 3.7 Max / GLM 5.1 | **Best Value:** $10 yields $60 of token value. | Soft value caps ($12/5hr). |
 | **\#2** | **Xiaomi MiMo Lite** | MiMo-V2.5 Pro | **Great:** Frontier model + 1M context for $6. | Smaller credit pool (4.1B/mo). |
 | **\#3** | **ChatGPT Go** | GPT-5.2 Instant | **Solid:** 10x free tier, file uploads, image gen. | Ads included; not full flagship model. |
-| **\#4** | **OpenCode Zen** | GPT-5.5 / GPT-5.4 | **Flexible:** Raw pay-per-token, zero markups. | **No lockouts**, but $10 drains fast on frontier models. |
-| **\#5** | **SuperGrok Lite** | Grok 4 (Basic) | **Limited:** Fast responses, but basic capabilities only. | Flagship reasoning locked behind $30/mo tier. |
+| **\#4** | **SuperGrok Lite** | Grok 4 (Basic) | **Limited:** Fast responses, but basic capabilities only. | Flagship reasoning locked behind $30/mo tier. |
 
-💡 **The Strategic Takeaway:** At the $10 price point, **OpenCode Go** is the clear winner — no other provider offers a 6x value multiplier on open flagship models. **MiMo Lite** is the runner-up if you want direct access to a frontier model with a massive context window for even less. **ChatGPT Go** is a solid everyday option if you prefer OpenAI's ecosystem and don't mind ads. Keep **OpenCode Zen** as a flexible fallback for targeted tasks where you need proprietary model access without a subscription commitment.
+💡 **The Strategic Takeaway:** At the $10 price point, **OpenCode Go** is the clear winner — no other provider offers a 6x value multiplier on open flagship models. **MiMo Lite** is the runner-up if you want direct access to a frontier model with a massive context window for even less. **ChatGPT Go** is a solid everyday option if you prefer OpenAI's ecosystem and don't mind ads.
 
 ---
 
