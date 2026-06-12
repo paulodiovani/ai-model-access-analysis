@@ -4,146 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Model Access Analysis</title>
+    
+    <!-- Tailwind CSS for modern layout and utility styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- GitHub Markdown CSS for clean document rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    
     <style>
-        :root {
-            --sidebar-width: 280px;
-            --bg-color: #f6f8fa;
-            --sidebar-bg: #ffffff;
-            --text-main: #24292f;
-            --accent-color: #0969da;
-        }
         body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        #sidebar {
-            width: var(--sidebar-width);
-            background-color: var(--sidebar-bg);
-            border-right: 1px solid #d0d7de;
-            display: flex;
-            flex-direction: column;
-            padding: 20px 0;
-            box-sizing: border-box;
-        }
-        #sidebar h2 {
-            padding: 0 20px;
-            font-size: 16px;
-            color: #57606a;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
-        }
-        .nav-item {
-            padding: 10px 20px;
-            cursor: pointer;
-            color: var(--text-main);
-            text-decoration: none;
-            transition: background 0.2s;
-            font-size: 14px;
-            border-left: 4px solid transparent;
-        }
-        .nav-item:hover {
-            background-color: #f3f4f6;
-        }
-        .nav-item.active {
-            background-color: #f3f4f6;
-            color: var(--accent-color);
-            border-left-color: var(--accent-color);
-            font-weight: 600;
-        }
-        #main-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 40px;
-            box-sizing: border-box;
+            background-color: #f8fafc;
         }
         .markdown-body {
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            color: #24292f !important;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
-        #loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255,255,255,0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            font-weight: 500;
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
-<body>
-    <div id="sidebar">
-        <h2>Analysis</h2>
-        <div id="nav-links">
-            <a class="nav-item active" data-file="rankings.md">💰 $20 Budget Analysis</a>
-            <a class="nav-item" data-file="free-rankings.md">🆓 Free Tier Analysis</a>
+<body class="text-slate-900 h-screen flex overflow-hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="w-72 bg-slate-900 text-slate-300 flex flex-col h-full shadow-xl z-20">
+        <div class="p-6">
+            <h1 class="text-white text-xl font-bold flex items-center gap-2">
+                <span>🚀</span> Access Analysis
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Agentic Value Index</p>
         </div>
-    </div>
 
-    <div id="main-content">
-        <div id="content" class="markdown-body">Loading content...</div>
-    </div>
+        <nav class="flex-1 px-3 space-y-1">
+            <p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Analysis Documents</p>
+            
+            <a href="#" 
+               data-file="rankings.md" 
+               class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group active"
+               id="link-rankings">
+                <span class="text-lg">💰</span>
+                <span class="text-sm font-medium">$20 Budget Analysis</span>
+            </a>
+            
+            <a href="#" 
+               data-file="free-rankings.md" 
+               class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group"
+               id="link-free">
+                <span class="text-lg">🆓</span>
+                <span class="text-sm font-medium">Free Tier Analysis</span>
+            </a>
+        </nav>
 
-    <div id="loading-overlay">Loading...</div>
+        <div class="p-4 border-t border-slate-800 text-center">
+            <a href="https://github.com/paulodiovani/ai-model-access-analysis" target="_blank" class="text-xs text-slate-500 hover:text-slate-300 flex items-center justify-center gap-1">
+                View on GitHub ↗
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 overflow-y-auto relative bg-slate-100">
+        <div class="max-w-4xl mx-auto py-12 px-6">
+            <div id="content" class="markdown-body min-h-[60vh] transition-opacity duration-300 opacity-100">
+                Loading content...
+            </div>
+        </div>
+    </main>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loader" class="hidden fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div class="bg-white p-4 rounded-full shadow-lg animate-spin rounded-full h-10 w-10 border-4 border-slate-200 border-t-slate-900"></div>
+    </div>
 
     <script>
         const contentDiv = document.getElementById('content');
-        const navItems = document.querySelectorAll('.nav-item');
-        const loader = document.getElementById('loading-overlay');
+        const loader = document.getElementById('loader');
+        const navLinks = document.querySelectorAll('.nav-link');
 
         async function loadPage(fileName) {
-            loader.style.display = 'flex';
+            // UI State: Loading
+            contentDiv.style.opacity = '0';
+            loader.classList.remove('hidden');
+
             try {
-                // Note: the files are stored in the /docs/content/ folder on GH Pages
-                const response = await fetch(`docs/content/${fileName}`);
-                if (!response.ok) throw new Error(`Failed to load ${fileName}`);
+                // IMPORTANT: Path is relative to the index.html location
+                // In GitHub Pages: /ai-model-access-analysis/docs/content/rankings.md
+                const response = await fetch(`content/${fileName}`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                
                 const text = await response.text();
                 contentDiv.innerHTML = marked.parse(text);
-                
-                // Update URL hash for deep linking
-                window.location.hash = fileName;
             } catch (e) {
-                contentDiv.innerHTML = `<div style="color: red; text-align: center;">Error loading content: ${e.message}</div>`;
+                contentDiv.innerHTML = `
+                    <div class="text-center py-20">
+                        <div class="text-5xl mb-4">❌</div>
+                        <h3 class="text-xl font-bold text-slate-800">Failed to load content</h3>
+                        <p class="text-slate-500">${e.message}</p>
+                        <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-slate-900 text-white rounded-md text-sm">Retry</button>
+                    </div>
+                `;
             } finally {
-                loader.style.display = 'none';
+                contentDiv.style.opacity = '1';
+                loader.classList.add('hidden');
             }
         }
 
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+        function updateActiveState(activeFile) {
+            navLinks.forEach(link => {
+                if (link.dataset.file === activeFile) {
+                    link.classList.add('bg-slate-800', 'text-white', 'font-semibold');
+                    link.classList.remove('text-slate-300');
+                } else {
+                    link.classList.remove('bg-slate-800', 'text-white', 'font-semibold');
+                    link.classList.add('text-slate-300');
+                }
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', async (e) => {
                 e.preventDefault();
-                navItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                loadPage(item.dataset.file);
+                const file = link.dataset.file;
+                updateActiveState(file);
+                window.location.hash = file;
+                await loadPage(file);
             });
         });
 
-        // Initial load based on URL hash or default
+        // Initial Load Logic
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
-            if (hash && document.querySelector(`.nav-item[data-file="${hash}"]`)) {
-                const target = document.querySelector(`.nav-item[data-file="${hash}"]`);
-                navItems.forEach(i => i.classList.remove('active'));
-                target.classList.add('active');
-                loadPage(hash);
-            } else {
-                loadPage('rankings.md');
-            }
+            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]`)) ? hash : 'rankings.md';
+            
+            updateActiveState(initialFile);
+            loadPage(initialFile);
         });
     </script>
 </body>
