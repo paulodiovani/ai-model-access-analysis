@@ -35,13 +35,7 @@ Create a new branch for each logical change. Never commit directly to `main`.
 
 This project's value depends on factual accuracy. Stale or incorrect information is worse than no information at all.
 
-### Providers to Verify Against
-- OpenAI: https://openai.com/pricing
-- Anthropic: https://www.anthropic.com/pricing
-- Google: https://ai.google.dev/pricing
-- OpenRouter: https://openrouter.ai/models
-- Hugging Face: https://huggingface.co/pricing
-- Check each provider's official docs page for the most current limits
+When updating a provider entry, find their official pricing or documentation page first. Every entry in `rankings.md` and `free-rankings.md` should have a verifiable source behind it.
 
 ## 📁 Project Structure
 
