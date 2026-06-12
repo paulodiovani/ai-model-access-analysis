@@ -185,9 +185,23 @@
         openMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('-translate-x-full'));
         closeMenuBtn.addEventListener('click', () => mobileMenu.classList.add('-translate-x-full'));
 
+        // Handle internal cross-page links (e.g. [text](#20-rankings.md))
+        contentDiv.addEventListener('click', async (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#') && href.endsWith('.md')) {
+                e.preventDefault();
+                const file = href.substring(1);
+                updateActiveState(file);
+                window.location.hash = file;
+                await loadPage(file);
+            }
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
-            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]`)) ? hash : '20-rankings.md';
+            const initialFile = (hash && hash.endsWith('.md')) ? hash : '20-rankings.md';
             updateActiveState(initialFile);
             loadPage(initialFile);
         });
