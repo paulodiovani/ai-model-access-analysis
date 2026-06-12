@@ -12,8 +12,8 @@
             darkMode: 'class',
         }
     </script>
-    <!-- Marked.js -->
-    <script src="https://cdn.jsdelivr.net/npm/marked.marked.min.js"></script>
+    <!-- Marked.js (Updated to version 9+ which uses a different global variable) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- GitHub Markdown CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
     
@@ -30,12 +30,11 @@
             padding: 1.5rem;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            overflow-x: auto; /* Prevent tables from breaking layout */
+            overflow-x: auto;
         }
         .light .markdown-body { background-color: #ffffff; }
         .dark .markdown-body { background-color: #0d1117; }
 
-        /* Ensure images/tables don't overflow on mobile */
         .markdown-body img, .markdown-body table {
             max-width: 100% !important;
             display: block;
@@ -45,7 +44,7 @@
 </head>
 <body class="h-screen flex overflow-hidden font-sans">
 
-    <!-- MOBILE OVERLAY MENU (Triggered by JS) -->
+    <!-- MOBILE OVERLAY MENU -->
     <div id="mobile-menu" class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
         <aside class="w-72 h-full bg-slate-900 text-slate-300 flex flex-col shadow-2xl">
             <div class="p-6 flex justify-between items-center">
@@ -61,7 +60,7 @@
                 <a href="#" data-file="rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
                     <span class="text-lg">💰</span><span class="text-sm font-medium">$20 Budget Analysis</span>
                 </a>
-                <a href="#" data-file="free-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration- la-transition duration-200 hover:bg-slate-800 hover:text-white group">
+                <a href="#" data-file="free-rankings.md" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group">
                     <span class="text-lg">🆓</span><span class="text-sm font-medium">Free Tier Analysis</span>
                 </a>
                 <p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-6 mb-2">General</p>
@@ -101,16 +100,13 @@
         </div>
     </aside>
 
-    <!-- MAIN CONTENT AREA -->
     <main id="main-bg" class="flex-1 overflow-y-auto relative bg-slate-100 dark:bg-slate-900">
-        <!-- Mobile Header -->
         <div class="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-slate-800 shadow-sm">
             <h1 class="text-slate-900 dark:text-white font-bold">🚀 Access Analysis</h1>
             <button id="open-menu" class="p-2 bg-slate-100 dark:bg-slate-700 rounded-md">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        
         <div class="max-w-4xl mx-auto py-8 px-4 md:py-12 md:px-6">
             <div id="content" class="markdown-body min-h-[60vh] transition-opacity duration-300 opacity-100">
                 Loading content...
@@ -145,6 +141,7 @@
                 const response = await fetch(`content/${fileName}`);
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const text = await response.text();
+                // Use marked.parse() as a function instead of marked() directly to support v9+
                 contentDiv.innerHTML = marked.parse(text);
             } catch (e) {
                 contentDiv.innerHTML = `<div class="text-center py-20"><div class="text-5xl mb-4">❌</div><h3 class="text-xl font-bold">Error loading content</h3><p>${e.message}</p></div>`;
