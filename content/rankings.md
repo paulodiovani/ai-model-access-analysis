@@ -1,4 +1,6 @@
-## **Flagship Tier Rankings (Normalized to a $20 Budget)**
+## **Comparative Analysis of AI Model Access Providers (Normalized to a $20 Budget)**
+
+This analysis evaluates the economic efficiency of various AI access models, focusing on the volume of flagship-tier reasoning tokens available and the resilience of rate limits when used for high-velocity agentic workflows.
 
 Here is the definitive ranking from **most raw flagship usage volume (Best)** to **fastest capacity depletion/lockout (Worst)**.
 
