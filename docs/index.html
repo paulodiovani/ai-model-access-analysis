@@ -5,51 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Model Access Analysis</title>
     
-    <!-- Tailwind CSS for modern layout and utility styles -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Marked.js for Markdown parsing -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // We will manage the class manually based on system preference
+        }
+    </script>
+    <!-- Marked.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- GitHub Markdown CSS for clean document rendering -->
+    <!-- GitHub Markdown CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
     
     <style>
-        body {
-            background-color: #f8fafc;
+        /* Base transition for smooth theme switching */
+        body, .markdown-body, aside, main {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+        /* Refined Markdown Body - Let the CSS library handle the internal text colors */
         .markdown-body {
-            background: white;
             padding: 2rem;
             border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            /* FORCE DARK TEXT FOR LIGHT MODE */
-            color: #24292f !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
-        .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
-            color: #1a1c1e !important;
-        }
-        .markdown-body p, .markdown-body li, .markdown-body td, .markdown-body th {
-            color: #24292f !important;
-        }
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        
+        /* Ensure the card background matches the theme */
+        .light .markdown-body { background-color: #ffffff; }
+        .dark .markdown-body { background-color: #0d1117; }
     </style>
 </head>
-<body class="text-slate-900 h-screen flex overflow-hidden">
+<body class="h-screen flex overflow-hidden">
 
     <!-- SIDEBAR -->
-    <aside class="w-72 bg-slate-900 text-slate-300 flex flex-col h-full shadow-xl z-20">
+    <aside id="sidebar" class="w-72 flex flex-col h-full shadow-xl z-20 bg-slate-900 text-slate-300 dark:bg-slate-950 dark:text-slate-400">
         <div class="p-6">
             <h1 class="text-white text-xl font-bold flex items-center gap-2">
                 <span>🚀</span> Access Analysis
@@ -62,7 +57,7 @@
             
             <a href="#" 
                data-file="rankings.md" 
-               class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group active"
+               class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 hover:bg-slate-800 hover:text-white group"
                id="link-rankings">
                 <span class="text-lg">💰</span>
                 <span class="text-sm font-medium">$20 Budget Analysis</span>
@@ -85,7 +80,7 @@
     </aside>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="flex-1 overflow-y-auto relative bg-slate-100">
+    <main id="main-bg" class="flex-1 overflow-y-auto relative bg-slate-100 dark:bg-slate-900">
         <div class="max-w-4xl mx-auto py-12 px-6">
             <div id="content" class="markdown-body min-h-[60vh] transition-opacity duration-300 opacity-100">
                 Loading content...
@@ -95,7 +90,7 @@
 
     <!-- LOADING OVERLAY -->
     <div id="loader" class="hidden fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-50 flex items-center justify-center">
-        <div class="bg-white p-4 rounded-full shadow-lg animate-spin rounded-full h-10 w-10 border-4 border-slate-200 border-t-slate-900"></div>
+        <div class="bg-white dark:bg-slate-800 p-4 rounded-full shadow-lg animate-spin h-10 w-10 border-4 border-slate-200 dark:border-slate-700 border-t-slate-900 dark:border-t-white"></div>
     </div>
 
     <script>
@@ -103,25 +98,27 @@
         const loader = document.getElementById('loader');
         const navLinks = document.querySelectorAll('.nav-link');
 
+        // Theme Management
+        function applyTheme() {
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', isDark);
+            document.documentElement.classList.toggle('light', !isDark);
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+        applyTheme();
+
         async function loadPage(fileName) {
             contentDiv.style.opacity = '0';
             loader.classList.remove('hidden');
 
             try {
                 const response = await fetch(`content/${fileName}`);
-                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const text = await response.text();
                 contentDiv.innerHTML = marked.parse(text);
             } catch (e) {
-                contentDiv.innerHTML = `
-                    <div class="text-center py-20">
-                        <div class="text-5xl mb-4">❌</div>
-                        <h3 class="text-xl font-bold text-slate-800">Failed to load content</h3>
-                        <p class="text-slate-500">${e.message}</p>
-                        <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-slate-900 text-white rounded-md text-sm">Retry</button>
-                    </div>
-                `;
+                contentDiv.innerHTML = `<div class="text-center py-20"><div class="text-5xl mb-4">❌</div><h3 class="text-xl font-bold">Error loading content</h3><p>${e.message}</p></div>`;
             } finally {
                 contentDiv.style.opacity = '1';
                 loader.classList.add('hidden');
@@ -152,8 +149,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.substring(1);
-            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]增加了`)) ? hash : 'rankings.md';
-            
+            const initialFile = (hash && document.querySelector(`.nav-link[data-file="${hash}"]`)) ? hash : 'rankings.md';
             updateActiveState(initialFile);
             loadPage(initialFile);
         });
