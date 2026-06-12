@@ -44,6 +44,14 @@ This project's value depends on factual accuracy. Stale or incorrect information
 
 When updating a provider entry, find their official pricing or documentation page first. Every entry in `rankings.md` and `free-rankings.md` should have a verifiable source behind it.
 
+### Ranking Scope — Subscriptions Only
+The **$10 and $20 ranking pages are for subscription-based plans only.** Before adding a provider, verify it has a recurring monthly subscription (not just pay-as-you-go API credits). Pay-as-you-go providers (like DeepSeek API or OpenCode Zen) belong in the **free rankings** only if they offer a free tier.
+
+**Quick checklist before adding to a paid ranking:**
+- Does the provider have a monthly subscription plan?
+- Does the plan fit within the budget threshold ($10 or $20)?
+- If it's API-only / pay-per-token → do NOT add to paid rankings. Add to free rankings only if there's a free tier.
+
 ## 📁 Project Structure
 
 - `docs/content/20-rankings.md` — $20 budget analysis
