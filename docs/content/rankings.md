@@ -22,41 +22,35 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 * **What your $20 gets you:** Costs $18/month, leaving $2 in your pocket.  
 * **Why it's \#3:** It provides a highly resilient, unthrottled baseline frequency for solo IDE agents. While it will eventually queue your requests if you run complex, multi-agent autonomous loops for hours on end, it rarely hits a hard "lockout wall."
 
-### **4\. Qwen Standalone (Alibaba Web App)**
-
-* **The Model Class:** Open Flagships (*Qwen 3.7 Max*)  
-* **What your $20 gets you:** **Free** (leaving your $20 completely untouched).  
-* **Why it's \#4:** You can't beat free. The flagship Qwen 3.7 Max is open to the public on their chat web interface. However, it lacks dedicated agentic workspace integrations at the free tier and suffers from severe latency spikes during peak Asian business hours.
-
-### **5\. Google Gemini / Antigravity (Google AI Pro)**
+### **4\. Google Gemini / Antigravity (Google AI Pro)**
 
 * **The Model Class:** Ecosystem Flagships (*Gemini 3 Ultra / Pro*)  
 * **What your $20 gets you:** Right on the budget line ($19.99/month).  
-* **Why it's \#5:** While the 1-million-token context window is incredible, triggering heavy multi-file code refactors via the Antigravity CLI burns through Google's rolling 5-hour **compute-based allocation** rapidly.
+* **Why it's \#4:** While the 1-million-token context window is incredible, triggering heavy multi-file code refactors via the Antigravity CLI burns through Google's rolling 5-hour **compute-based allocation** rapidly.
 
-### **6\. OpenCode Zen (Pay-As-You-Go Credits)**
+### **5\. OpenCode Zen (Pay-As-You-Go Credits)**
 
 * **The Model Class:** Closed & Open Flagships (*GPT-5.5, GPT-5.4, GPT-5.3 Codex*)  
 * **What your $20 gets you:** Exactly $20 of raw, zero-markup wholesale API credits.  
-* **Why it drops to \#6:** Zen is incredibly transparent and features **zero message throttling or lockouts**. However, frontier proprietary models like GPT-5.5 are expensive. If you use a terminal agent that continuously passes an 80k-token codebase index for every small code modification, a single prompt can easily cost over $1.00. Your $20 cash balance can evaporate during a heavy afternoon coding sprint.
+* **Why it drops to \#5:** Zen is incredibly transparent and features **zero message throttling or lockouts**. However, frontier proprietary models like GPT-5.5 are expensive. If you use a terminal agent that continuously passes an 80k-token codebase index for every small code modification, a single prompt can easily cost over $1.00. Your $20 cash balance can evaporate during a heavy afternoon coding sprint.
 
-### **7\. Claude AI (Claude Pro)**
+### **6\. Claude AI (Claude Pro)**
 
 * **The Model Class:** Proprietary Flagships (*Claude Opus 4.7 / Sonnet*)  
 * **What your $20 gets you:** Exactly hits the $20 baseline.  
-* **Why it's \#7:** Anthropic applies strict compute caps to Opus 4.7 on the Pro tier to push heavy users toward their $100/month Claude Max tier. If you feed Claude Pro a large project workspace, you can trigger a 5-hour lockout window in as few as 10 to 15 prompts.
+* **Why it's \#6:** Anthropic applies strict compute caps to Opus 4.7 on the Pro tier to push heavy users toward their $100/month Claude Max tier. If you feed Claude Pro a large project workspace, you can trigger a 5-hour lockout window in as few as 10 to 15 prompts.
 
-### **8\. Minimax (Hailuo AI Standard)**
+### **7\. Minimax (Hailuo AI Standard)**
 
 * **The Model Class:** Multimedia & Chat Flagships (*MiniMax M3*)  
 * **What your $20 gets you:** Costs $14.99/month.  
-* **Why it's \#8:** It relies on a rigid **1,000-credit monthly pool**. When those credits are exhausted by heavy generation workloads, the tier stops dead until the next billing cycle.
+* **Why it's \#7:** It relies on a rigid **1,000-credit monthly pool**. When those credits are exhausted by heavy generation workloads, the tier stops dead until the next billing cycle.
 
-### **9\. Grok (SuperGrok Lite)**
+### **8\. Grok (SuperGrok Lite)**
 
 * **The Model Class:** Social & Search Flagships (*Grok 4*)  
 * **What your $20 gets you:** Costs $10/month, but lacks the core reasoning capabilities.  
-* **Why it's \#9:** The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking our $20 budget threshold.
+* **Why it's \#8:** The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking our $20 budget threshold.
 
 ## **Summary Comparison Table**
 
@@ -65,11 +59,10 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 | **\#1** | **OpenCode Go** | Qwen 3.7 Max / GLM 5.1 | **Best Value:** Costs $10, yields $60 of token value. | Soft value caps ($12/5hr). |
 | **\#2** | **ChatGPT Plus** | GPT-5.5 | **Excellent:** Heavily subsidized flat-rate volume. | Highly resilient (\~160 msg/3hr). |
 | **\#3** | **Z.ai / GLM** | GLM 5.1 | **Great:** Predictable, high-frequency agent access. | Queue slowdowns under continuous load. |
-| **\#4** | **Qwen Web App** | Qwen 3.7 Max | **Good:** Completely free. | High latency during peak hours. |
-| **\#5** | **Google AI Pro** | Gemini 3 Ultra | **Moderate:** Large context but compute-metered. | Drains fast via Antigravity CLI loops. |
-| **\#6** | **OpenCode Zen** | GPT-5.5 / GPT-5.4 | **Flexible:** Raw pay-per-token, zero markups. | **No lockouts**, but $20 drains fast on high context. |
-| **\#7** | **Claude Pro** | Claude Opus 4.7 | **Poor:** Extremely aggressive rate-limiting. | Hard lockout wall (often \<15 deep prompts). |
-| **\#8** | **Minimax** | MiniMax M3 | **Poor:** Rigid, unyielding monthly credit allowance. | Flat 1,000 credit hard stop. |
-| **\#9** | **SuperGrok Lite** | Grok 4 (Basic) | **Worst:** True flagship models locked out entirely. | Requires a tier upgrade to $30/mo. |
+| **\#4** | **Google AI Pro** | Gemini 3 Ultra | **Moderate:** Large context but compute-metered. | Drains fast via Antigravity CLI loops. |
+| **\#5** | **OpenCode Zen** | GPT-5.5 / GPT-5.4 | **Flexible:** Raw pay-per-token, zero markups. | **No lockouts**, but $20 drains fast on high context. |
+| **\#6** | **Claude Pro** | Claude Opus 4.7 | **Poor:** Extremely aggressive rate-limiting. | Hard lockout wall (often \<15 deep prompts). |
+| **\#7** | **Minimax** | MiniMax M3 | **Poor:** Rigid, unyielding monthly credit allowance. | Flat 1,000 credit hard stop. |
+| **\#8** | **SuperGrok Lite** | Grok 4 (Basic) | **Worst:** True flagship models locked out entirely. | Requires a tier upgrade to $30/mo. |
 
 💡 **The Strategic Takeaway:** If you want the absolute highest volume of elite reasoning tokens for a twenty-dollar budget, buy the **OpenCode Go subscription** for top-tier open models, or buy **ChatGPT Plus** for proprietary ones. Keep an **OpenCode Zen pay-as-you-go balance** as a fallback option when you need to execute high-velocity, high-context agent tasks without fear of hitting a subscription lockout wall.
