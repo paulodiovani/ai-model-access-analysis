@@ -21,6 +21,13 @@ git rebase origin/main
 ```
 Resolve any conflicts before pushing.
 
+### Update Documentation When Applicable
+If your change adds, removes, or renames files, update:
+- **`README.md`** — keep the project structure and tech stack accurate
+- **`AGENTS.md`** — keep the project structure and workflow rules current
+
+If your change affects the live site behavior or deployment, update the relevant docs.
+
 ### One Branch Per Change
 Create a new branch for each logical change. Never commit directly to `main`.
 

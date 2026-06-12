@@ -12,3 +12,5 @@ A clear and concise description of what this PR does.
 ## Checklist
 - [ ] Verified the changes on a mobile device.
 - [ ] Checked that markdown renders correctly in the SPA.
+- [ ] Updated README.md if project structure or tech stack changed.
+- [ ] Updated AGENTS.md if workflow rules or file structure changed.
