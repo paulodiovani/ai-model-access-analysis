@@ -14,7 +14,7 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 
 * **The Model Class:** Proprietary Flagships (*GPT-5.5, GPT-5.4 Thinking*)  
 * **What your $20 gets you:** Exactly covers the standard monthly subscription.  
-* **Why it's \#2:** OpenAI heavily subsidizes the Plus tier. The roughly 160 messages per 3 hours allowance means an active developer can feed massive file indexes into the workspace all day long. If you routed that same volume through raw API tokens, it would cost hundreds of dollars, making this a massive value loop for a flat twenty.
+* **Why it's \#2:** OpenAI heavily subsidizes the Plus tier. The roughly 160 messages per 3 hours allowance means an active developer can feed massive file indexes into the workspace all day long. If you routed that same volume through raw API tokens, it would cost hundreds of dollars, making this a massive value loop for a flat twenty. For lighter use, OpenAI also offers **ChatGPT Go at $8/month** with ~100 messages per 5 hours on GPT-5.2 Instant — see the [$10 Budget Analysis](#10-rankings.md) for details.
 
 ### **🥉 3\. Z.ai / GLM (Coding Plan Lite)**
 
