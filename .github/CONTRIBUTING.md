@@ -3,10 +3,10 @@
 Thank you for helping improve this index!
 
 ### 🛠 How to Contribute
-Since the `main` branch is protected, all changes must be submitted via Pull Request.
+All changes must be submitted via Pull Request.
 
 1. **Report a Bug or Request a Feature:** Please open an **Issue** first to describe the discrepancy or the new provider you'd like to add.
-2. **Fork and Branch:** Create a new branch for your changes.
+2. **Fork and Branch:** CLone this repositoru and create a new branch for your changes.
 3. **Submit PR:** Submit a Pull Request with a clear description of the changes.
 
 ### 📏 Contribution Guidelines
