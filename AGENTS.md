@@ -59,17 +59,82 @@ The `api-pricing.md` page is for **production API usage** — applications and s
 - Always verify prices from official pricing pages
 - Note: prices are standardized per model across providers — what differentiates providers are edge cases (free credits, cache discounts, batch tiers, routing, model variety)
 
+## 📊 Data-Driven Rules
+
+### Data Files Are the Source of Truth
+All pricing, rankings, and analysis data lives in structured JSON files under `data/`. The markdown pages in `docs/content/` are **derived from** the data files — never the other way around.
+
+**When updating information:**
+1. Update the data file (`data/*.json`) FIRST
+2. Then regenerate the markdown pages and charts
+3. Never edit pricing or ranking data directly in markdown
+
+### Schema Compliance
+Every data file MUST validate against `data/schema.json`. Before committing:
+- Check that all required fields are present
+- Check that enum values match the schema
+- Check that `source_ids` reference valid entries in `data/sources.json`
+
+### Source Registry (`data/sources.json`)
+Every provider MUST have its data sources registered in `data/sources.json` before it can be added to any ranking or pricing file.
+
+**To add a new provider:**
+1. First add the provider's source URL(s) to `data/sources.json` with:
+   - `id`: a unique slug (e.g., `newprovider-pricing`)
+   - `url`: the official pricing/documentation page
+   - `type`: one of `pricing_page`, `subscription_page`, `product_page`, `documentation`
+   - `last_verified`: today's ISO date
+   - `reliability`: `primary` (official source) or `secondary` (third-party)
+2. Then add the provider entry to the appropriate `data/*.json` file, referencing the source IDs
+3. Update the corresponding `docs/content/*.md` page
+
+### Data Update Procedure
+When updating existing provider data:
+1. Fetch the source URL listed in `data/sources.json`
+2. Compare current data against the live page
+3. Update the data file with any changes
+4. Update `last_verified` dates in both `data/sources.json` and the entry
+5. If prices changed, re-evaluate rankings (ranks may shift)
+6. Regenerate charts and pages
+
+### Ranking Classifications
+Entries are classified using the `ranking_class` field:
+- `exceptional_value` — Top tier, best ROI in category
+- `great_value` — Strong offering with minor trade-offs
+- `good_value` — Solid option, competitive
+- `moderate_value` — Average offering, some notable limitations
+- `limited_value` — Significant limitations or trade-offs
+- `poor_value` — Bottom tier, major limitations
+
 ## 📁 Project Structure
 
-- `docs/content/20-rankings.md` — $20 budget analysis
-- `docs/content/10-rankings.md` — $10 budget analysis
-- `docs/content/free-rankings.md` — Free tier analysis
-- `docs/content/api-pricing.md` — API pricing guide for production usage
-- `docs/content/about.md` — About the project
-- `docs/index.html` — SPA entry point
-- `.github/ISSUE_TEMPLATE/` — Issue templates
-- `.github/pull_request_template.md` — PR template
-- `CONTRIBUTING.md` — Contribution guidelines
+```
+├── AGENTS.md                    # This file
+├── CONTRIBUTING.md              # Contribution guidelines
+├── README.md                    # Project overview
+├── data/
+│   ├── schema.json              # JSON Schema for validation
+│   ├── sources.json             # Source URL registry
+│   ├── 20-rankings.json         # $20 budget ranking data
+│   ├── 10-rankings.json         # $10 budget ranking data
+│   ├── free-rankings.json       # Free tier ranking data
+│   ├── api-pricing.json         # API pricing data
+│   └── README.md                # Data directory docs
+├── docs/
+│   ├── index.html               # SPA entry point
+│   ├── content/
+│   │   ├── 20-rankings.md       # $20 budget analysis
+│   │   ├── 10-rankings.md       # $10 budget analysis
+│   │   ├── free-rankings.md     # Free tier analysis
+│   │   ├── api-pricing.md       # API pricing guide
+│   │   └── about.md             # About the project
+│   └── charts/                  # Generated chart images
+├── scripts/
+│   └── update-data.sh           # Data update automation
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── pull_request_template.md
+```
 
 ## 🚀 Deployment
 

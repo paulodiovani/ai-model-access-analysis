@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://paulodiovani.github.io/ai-model-access-analysis/data/schema.json",
+  "title": "AI Cost Analysis Data Schema",
+  "description": "Schema for structured AI provider cost analysis data files. Each ranking page has its own data file following this schema.",
+  "type": "object",
+  "required": ["schema_version", "page", "title", "last_updated", "entries"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "page": {
+      "type": "string",
+      "enum": ["20-rankings", "10-rankings", "free-rankings", "api-pricing"],
+      "description": "Identifier matching the page filename"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable page title"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date of last data update"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Entry"
+      }
+    }
+  },
+  "$defs": {
+    "Entry": {
+      "type": "object",
+      "required": ["rank", "provider", "category"],
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Ranking position (1 = best)"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider / platform name"
+        },
+        "plan": {
+          "type": "string",
+          "description": "Specific plan or tier name"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["subscription", "free", "api"],
+          "description": "Type of access model"
+        },
+        "monthly_price_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Monthly subscription price in USD (null for free/api)"
+        },
+        "model_class": {
+          "type": "string",
+          "description": "General class of models (e.g., 'Open Flagships', 'Proprietary Flagships')"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ModelInfo"
+          },
+          "description": "List of available models"
+        },
+        "budget_outcome": {
+          "type": "string",
+          "description": "Short description of value within budget (subscription rankings)"
+        },
+        "limit_type": {
+          "type": "string",
+          "enum": [
+            "soft_value_cap",
+            "hard_credit_pool",
+            "message_cap",
+            "rate_limit",
+            "compute_allocation",
+            "context_window_limit",
+            "time_limited",
+            "web_only",
+            "model_gating",
+            "none"
+          ],
+          "description": "Classification of the usage limit mechanism"
+        },
+        "limit_description": {
+          "type": "string",
+          "description": "Human-readable description of limits"
+        },
+        "limit_vulnerability": {
+          "type": "string",
+          "description": "Short label for how limits affect heavy usage"
+        },
+        "value_multiplier": {
+          "type": "number",
+          "description": "Effective value multiplier (e.g., 6.0 = 6x the subscription cost in API value)"
+        },
+        "computational_value_usd": {
+          "type": "number",
+          "description": "Estimated monthly computational value in USD"
+        },
+        "ranking_class": {
+          "$ref": "#/$defs/RankingClass"
+        },
+        "primary_limit": {
+          "type": "string",
+          "description": "Main free-tier limitation type (free rankings)"
+        },
+        "main_limitation": {
+          "type": "string",
+          "description": "Primary limitation description (free rankings)"
+        },
+        "api_access": {
+          "type": "boolean",
+          "description": "Whether free tier includes API access"
+        },
+        "data_privacy": {
+          "type": "string",
+          "enum": ["used_for_training", "varies", "not_used"],
+          "description": "Data privacy policy for free/submission tiers"
+        },
+        "pricing": {
+          "$ref": "#/$defs/ApiPricing",
+          "description": "API pricing details (api-pricing entries)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Detailed analysis notes"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "References to source IDs in sources.json"
+        }
+      }
+    },
+    "ModelInfo": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Model name (e.g., 'GPT-5.5', 'Claude Opus 4.8')"
+        },
+        "tier": {
+          "type": "string",
+          "enum": ["flagship", "mid", "fast", "free", "open"],
+          "description": "Model quality tier"
+        },
+        "context_window": {
+          "type": "string",
+          "description": "Context window size (e.g., '128K', '1M')"
+        },
+        "params": {
+          "type": "string",
+          "description": "Parameter count if known (e.g., '42B active')"
+        }
+      }
+    },
+    "ApiPricing": {
+      "type": "object",
+      "properties": {
+        "flagship_input_per_m": {
+          "type": "number",
+          "description": "Flagship model input price per million tokens (USD)"
+        },
+        "flagship_output_per_m": {
+          "type": "number",
+          "description": "Flagship model output price per million tokens (USD)"
+        },
+        "cached_input_discount": {
+          "type": "string",
+          "description": "Cache hit discount (e.g., '90%', '99%')"
+        },
+        "cached_input_price_per_m": {
+          "type": "number",
+          "description": "Cached input price per million tokens (USD)"
+        },
+        "batch_discount": {
+          "type": "string",
+          "description": "Batch API discount (e.g., '50%')"
+        },
+        "free_tier": {
+          "type": "string",
+          "description": "Free tier description"
+        },
+        "platform_fee": {
+          "type": "string",
+          "description": "Platform/aggregator fee (e.g., '5.5%')"
+        },
+        "models_detail": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ModelPricing"
+          },
+          "description": "Per-model pricing breakdown"
+        }
+      }
+    },
+    "ModelPricing": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "input_per_m": { "type": "number" },
+        "output_per_m": { "type": "number" },
+        "cached_per_m": { "type": "number" }
+      }
+    },
+    "RankingClass": {
+      "type": "string",
+      "enum": [
+        "exceptional_value",
+        "great_value",
+        "good_value",
+        "moderate_value",
+        "limited_value",
+        "poor_value"
+      ],
+      "description": "Classification tier for the ranking entry"
+    }
+  }
+}

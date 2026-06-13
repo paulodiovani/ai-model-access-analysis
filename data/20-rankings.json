@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "page": "20-rankings",
+  "title": "Comparative Analysis of AI Model Access Providers (Normalized to a $20 Budget)",
+  "budget_threshold_usd": 20,
+  "last_updated": "2026-06-13",
+  "scope": "subscription",
+  "entries": [
+    {
+      "rank": 1,
+      "provider": "OpenCode Go",
+      "plan": "Subscription",
+      "category": "subscription",
+      "monthly_price_usd": 10.00,
+      "model_class": "Open Flagships",
+      "models": [
+        { "name": "Qwen 3.7 Max", "tier": "flagship", "context_window": "1M" },
+        { "name": "GLM 5.1", "tier": "flagship", "context_window": "1M" },
+        { "name": "MiMo V2.5 Pro", "tier": "flagship", "context_window": "1M" }
+      ],
+      "budget_outcome": "Best Value: Costs $10, yields $60 of token value.",
+      "limit_type": "soft_value_cap",
+      "limit_description": "$12 per 5 hours / $30 per week",
+      "limit_vulnerability": "Soft value caps ($12/5hr).",
+      "value_multiplier": 6.0,
+      "computational_value_usd": 60.00,
+      "ranking_class": "exceptional_value",
+      "notes": "Uses a layered cap system that gives $60 of monthly computational value ($12 per 5 hours / $30 per week) for the $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models. The base $10 subscription is also the top pick in the $10 Budget Analysis — extra $10 acts as a buffer for heavier usage or optional credit top-ups.",
+      "source_ids": ["opencode-pricing"]
+    },
+    {
+      "rank": 2,
+      "provider": "GPT Codex / OpenAI",
+      "plan": "ChatGPT Plus",
+      "category": "subscription",
+      "monthly_price_usd": 20.00,
+      "model_class": "Proprietary Flagships",
+      "models": [
+        { "name": "GPT-5.5", "tier": "flagship", "context_window": "128K" },
+        { "name": "GPT-5.4 Thinking", "tier": "flagship", "context_window": "128K" }
+      ],
+      "budget_outcome": "Excellent: Heavily subsidized flat-rate volume.",
+      "limit_type": "message_cap",
+      "limit_description": "~160 messages per 3 hours",
+      "limit_vulnerability": "Highly resilient (~160 msg/3hr).",
+      "ranking_class": "exceptional_value",
+      "notes": "OpenAI heavily subsidizes the Plus tier. The roughly 160 messages per 3 hours allowance means an active developer can feed massive file indexes into the workspace all day long. If you routed that same volume through raw API tokens, it would cost hundreds of dollars, making this a massive value loop for a flat twenty.",
+      "source_ids": ["openai-pricing", "openai-chatgpt-plans"]
+    },
+    {
+      "rank": 3,
+      "provider": "Z.ai / GLM",
+      "plan": "Coding Plan Lite",
+      "category": "subscription",
+      "monthly_price_usd": 18.00,
+      "model_class": "Chinese Lab Flagships",
+      "models": [
+        { "name": "GLM 5.1", "tier": "flagship", "context_window": "1M" }
+      ],
+      "budget_outcome": "Great: Predictable, high-frequency agent access.",
+      "limit_type": "rate_limit",
+      "limit_description": "Unthrottled baseline; queue under sustained load",
+      "limit_vulnerability": "Queue slowdowns under continuous load.",
+      "ranking_class": "great_value",
+      "notes": "Provides a highly resilient, unthrottled baseline frequency for solo IDE agents. While it will eventually queue your requests if you run complex, multi-agent autonomous loops for hours on end, it rarely hits a hard lockout wall.",
+      "source_ids": ["zai-coding-plan", "zhipu-pricing"]
+    },
+    {
+      "rank": 4,
+      "provider": "Xiaomi MiMo",
+      "plan": "Token Plan Standard",
+      "category": "subscription",
+      "monthly_price_usd": 16.00,
+      "model_class": "Open Flagships",
+      "models": [
+        { "name": "MiMo-V2.5 Pro", "tier": "flagship", "context_window": "1M", "params": "1T total, 42B active" }
+      ],
+      "budget_outcome": "Strong: Flagship model + 1M context for $16.",
+      "limit_type": "hard_credit_pool",
+      "limit_description": "11B monthly credits covering full MiMo-V2.5 model family",
+      "limit_vulnerability": "Credit pool burn rate under heavy load.",
+      "ranking_class": "great_value",
+      "notes": "The MiMo-V2.5 Pro is a genuine frontier model with a 1-million-token context window at a competitive price point. The credit-based system is straightforward. At $16 for a flagship-tier model, the value proposition is strong.",
+      "source_ids": ["mimo-pricing"]
+    },
+    {
+      "rank": 5,
+      "provider": "Google Gemini / Antigravity",
+      "plan": "Google AI Pro",
+      "category": "subscription",
+      "monthly_price_usd": 19.99,
+      "model_class": "Ecosystem Flagships",
+      "models": [
+        { "name": "Gemini 3 Ultra", "tier": "flagship", "context_window": "1M" },
+        { "name": "Gemini 3 Pro", "tier": "flagship", "context_window": "1M" }
+      ],
+      "budget_outcome": "Moderate: Large context but compute-metered.",
+      "limit_type": "compute_allocation",
+      "limit_description": "Rolling 5-hour compute-based allocation",
+      "limit_vulnerability": "Drains fast via Antigravity CLI loops.",
+      "ranking_class": "moderate_value",
+      "notes": "While the 1-million-token context window is incredible, triggering heavy multi-file code refactors via the Antigravity CLI burns through Google's rolling 5-hour compute-based allocation rapidly.",
+      "source_ids": ["google-ai-pricing", "google-one-ai"]
+    },
+    {
+      "rank": 6,
+      "provider": "Claude AI",
+      "plan": "Claude Pro",
+      "category": "subscription",
+      "monthly_price_usd": 20.00,
+      "model_class": "Proprietary Flagships",
+      "models": [
+        { "name": "Claude Opus 4.7", "tier": "flagship", "context_window": "200K" },
+        { "name": "Claude Sonnet", "tier": "mid", "context_window": "200K" }
+      ],
+      "budget_outcome": "Poor: Extremely aggressive rate-limiting.",
+      "limit_type": "compute_allocation",
+      "limit_description": "Strict compute caps; 5-hour lockout window",
+      "limit_vulnerability": "Hard lockout wall (often <15 deep prompts).",
+      "ranking_class": "poor_value",
+      "notes": "Anthropic applies strict compute caps to Opus 4.7 on the Pro tier to push heavy users toward their $100/month Claude Max tier. If you feed Claude Pro a large project workspace, you can trigger a 5-hour lockout window in as few as 10 to 15 prompts.",
+      "source_ids": ["anthropic-pricing"]
+    },
+    {
+      "rank": 7,
+      "provider": "Minimax",
+      "plan": "Hailuo AI Standard",
+      "category": "subscription",
+      "monthly_price_usd": 14.99,
+      "model_class": "Multimedia & Chat Flagships",
+      "models": [
+        { "name": "MiniMax M3", "tier": "flagship", "context_window": "1M" }
+      ],
+      "budget_outcome": "Poor: Rigid, unyielding monthly credit allowance.",
+      "limit_type": "hard_credit_pool",
+      "limit_description": "1,000-credit monthly pool",
+      "limit_vulnerability": "Flat 1,000 credit hard stop.",
+      "ranking_class": "poor_value",
+      "notes": "It relies on a rigid 1,000-credit monthly pool. When those credits are exhausted by heavy generation workloads, the tier stops dead until the next billing cycle.",
+      "source_ids": ["minimax-pricing", "minimax-hailuo"]
+    },
+    {
+      "rank": 8,
+      "provider": "Grok",
+      "plan": "SuperGrok Lite",
+      "category": "subscription",
+      "monthly_price_usd": 10.00,
+      "model_class": "Social & Search Flagships",
+      "models": [
+        { "name": "Grok 4", "tier": "mid", "context_window": "128K" }
+      ],
+      "budget_outcome": "Worst: True flagship models locked out entirely.",
+      "limit_type": "model_gating",
+      "limit_description": "Basic capabilities only; flagship reasoning requires $30/mo",
+      "limit_vulnerability": "Requires a tier upgrade to $30/mo.",
+      "ranking_class": "limited_value",
+      "notes": "The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking the $20 budget threshold.",
+      "source_ids": ["xai-pricing", "xai-grok-plans"]
+    }
+  ]
+}

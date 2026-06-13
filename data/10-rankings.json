@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "page": "10-rankings",
+  "title": "Comparative Analysis of AI Model Access Providers (Normalized to a $10 Budget)",
+  "budget_threshold_usd": 10,
+  "last_updated": "2026-06-13",
+  "scope": "subscription",
+  "entries": [
+    {
+      "rank": 1,
+      "provider": "OpenCode Go",
+      "plan": "Subscription",
+      "category": "subscription",
+      "monthly_price_usd": 10.00,
+      "model_class": "Open Flagships",
+      "models": [
+        { "name": "Qwen 3.7 Max", "tier": "flagship", "context_window": "1M" },
+        { "name": "GLM 5.1", "tier": "flagship", "context_window": "1M" },
+        { "name": "MiMo V2.5 Pro", "tier": "flagship", "context_window": "1M" }
+      ],
+      "budget_outcome": "Best Value: $10 yields $60 of token value.",
+      "limit_type": "soft_value_cap",
+      "limit_description": "$12 per 5 hours / $30 per week",
+      "limit_vulnerability": "Soft value caps ($12/5hr).",
+      "value_multiplier": 6.0,
+      "computational_value_usd": 60.00,
+      "ranking_class": "exceptional_value",
+      "notes": "The same 6x value multiplier that makes OpenCode Go the top pick at $20 works just as well at $10. You get $60 of monthly computational value ($12 per 5 hours / $30 per week) across flagship open models like Qwen 3.7 Max and GLM 5.1. No other provider comes close to this kind of return on a ten-dollar bill.",
+      "source_ids": ["opencode-pricing"]
+    },
+    {
+      "rank": 2,
+      "provider": "Xiaomi MiMo",
+      "plan": "Token Plan Lite",
+      "category": "subscription",
+      "monthly_price_usd": 6.00,
+      "model_class": "Open Flagships",
+      "models": [
+        { "name": "MiMo-V2.5 Pro", "tier": "flagship", "context_window": "1M", "params": "1T total, 42B active" }
+      ],
+      "budget_outcome": "Great: Frontier model + 1M context for $6.",
+      "limit_type": "hard_credit_pool",
+      "limit_description": "4.1B monthly credits covering full MiMo-V2.5 model family",
+      "limit_vulnerability": "Smaller credit pool (4.1B/mo).",
+      "ranking_class": "great_value",
+      "notes": "At just $6, you get access to a genuine frontier model with a 1-million-token context window. The MiMo-V2.5 Pro rivals models that cost significantly more on other platforms. The Lite plan's 4.1B credit pool is smaller than the Standard plan's 11B, but for moderate use it's more than enough. And you still have $4 left over.",
+      "source_ids": ["mimo-pricing"]
+    },
+    {
+      "rank": 3,
+      "provider": "OpenAI",
+      "plan": "ChatGPT Go",
+      "category": "subscription",
+      "monthly_price_usd": 8.00,
+      "model_class": "Proprietary Fast Models",
+      "models": [
+        { "name": "GPT-5.2 Instant", "tier": "fast", "context_window": "128K" }
+      ],
+      "budget_outcome": "Solid: 10x free tier, file uploads, image gen.",
+      "limit_type": "message_cap",
+      "limit_description": "~100 messages per 5 hours",
+      "limit_vulnerability": "Ads included; not full flagship model.",
+      "ranking_class": "good_value",
+      "notes": "For $8, you get roughly 10x the free tier — approximately 100 messages with GPT-5.2 Instant per 5-hour window, plus file uploads, image generation, and an expanded context window. GPT-5.2 Instant is fast and capable for everyday tasks. The catch: OpenAI is rolling out ads in the Go tier.",
+      "source_ids": ["openai-chatgpt-plans"]
+    },
+    {
+      "rank": 4,
+      "provider": "Grok",
+      "plan": "SuperGrok Lite",
+      "category": "subscription",
+      "monthly_price_usd": 10.00,
+      "model_class": "Social & Search Flagships",
+      "models": [
+        { "name": "Grok 4", "tier": "mid", "context_window": "128K" }
+      ],
+      "budget_outcome": "Limited: Fast responses, but basic capabilities only.",
+      "limit_type": "model_gating",
+      "limit_description": "Basic capabilities only; flagship reasoning requires $30/mo",
+      "limit_vulnerability": "Flagship reasoning locked behind $30/mo tier.",
+      "ranking_class": "limited_value",
+      "notes": "The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions — but it lacks deep reasoning and coding capabilities.",
+      "source_ids": ["xai-pricing", "xai-grok-plans"]
+    }
+  ]
+}

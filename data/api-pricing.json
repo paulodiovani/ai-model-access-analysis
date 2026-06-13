@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "page": "api-pricing",
+  "title": "API Pricing Guide for Production AI Applications",
+  "last_updated": "2026-06-13",
+  "scope": "api",
+  "entries": [
+    {
+      "rank": 1,
+      "provider": "DeepSeek",
+      "category": "api",
+      "models": [
+        { "name": "DeepSeek-V4-Pro", "tier": "flagship", "context_window": "1M" },
+        { "name": "DeepSeek-V4-Flash", "tier": "fast", "context_window": "1M" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 0.44,
+        "flagship_output_per_m": 0.87,
+        "cached_input_discount": "99%",
+        "cached_input_price_per_m": 0.004,
+        "batch_discount": null,
+        "free_tier": "Free chat at chat.deepseek.com (no API free tier)",
+        "models_detail": [
+          { "name": "V4-Pro", "input_per_m": 0.44, "output_per_m": 0.87, "cached_per_m": 0.004 },
+          { "name": "V4-Flash", "input_per_m": 0.14, "output_per_m": 0.28, "cached_per_m": 0.003 }
+        ]
+      },
+      "ranking_class": "exceptional_value",
+      "notes": "The most extreme caching discount in the industry — 99% off cached input makes repeated prompts nearly free. V4-Pro competes with GPT-5.4 and Claude Sonnet on reasoning benchmarks. Cache hits at $0.003/M are unmatched.",
+      "limitations": ["Only two models", "No built-in tooling/guardrails/enterprise features", "Based in China — data sovereignty concern", "API only (no managed platform)"],
+      "source_ids": ["deepseek-pricing"]
+    },
+    {
+      "rank": 2,
+      "provider": "Z.ai / Zhipu AI (GLM)",
+      "category": "api",
+      "models": [
+        { "name": "GLM-5.1", "tier": "flagship", "context_window": "1M" },
+        { "name": "GLM-5", "tier": "flagship", "context_window": "128K" },
+        { "name": "GLM-4.7", "tier": "mid", "context_window": "128K" },
+        { "name": "GLM-4.7-Flash", "tier": "fast", "context_window": "128K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 0.83,
+        "flagship_output_per_m": 3.33,
+        "cached_input_discount": "75-80%",
+        "cached_input_price_per_m": null,
+        "batch_discount": "50%",
+        "free_tier": "GLM-4.7-Flash is completely free and unlimited. New user credits on signup.",
+        "models_detail": [
+          { "name": "GLM-5.1", "input_per_m": 0.83, "output_per_m": 3.33 },
+          { "name": "GLM-5", "input_per_m": 0.56, "output_per_m": 2.50 },
+          { "name": "GLM-4.7-Flash", "input_per_m": 0, "output_per_m": 0 }
+        ]
+      },
+      "ranking_class": "exceptional_value",
+      "notes": "Triple incentive — 80% caching discount, 50% batch discount, AND a free unlimited model. The free tier alone (GLM-4.7-Flash) can handle serious workloads.",
+      "limitations": ["Prices in CNY", "Platform primarily Chinese-language", "GLM-5.1 pricing doubles above 32K context", "Limited international ecosystem"],
+      "source_ids": ["zhipu-pricing"]
+    },
+    {
+      "rank": 3,
+      "provider": "Google AI (Gemini)",
+      "category": "api",
+      "models": [
+        { "name": "Gemini 3.1 Pro", "tier": "flagship", "context_window": "1M" },
+        { "name": "Gemini 3.5 Flash", "tier": "fast", "context_window": "1M" },
+        { "name": "Gemini 3 Flash", "tier": "fast", "context_window": "1M" },
+        { "name": "Gemma 4", "tier": "open", "context_window": "128K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 2.00,
+        "flagship_output_per_m": 12.00,
+        "cached_input_discount": "90%",
+        "cached_input_price_per_m": null,
+        "batch_discount": "50%",
+        "free_tier": "Rate-limited free access on most Gemini models. Gemma 4 (open-source) is free.",
+        "models_detail": [
+          { "name": "3.1 Pro", "input_per_m": 2.00, "output_per_m": 12.00 },
+          { "name": "3.5 Flash", "input_per_m": 1.50, "output_per_m": 9.00 },
+          { "name": "3 Flash", "input_per_m": 0.50, "output_per_m": 3.00 },
+          { "name": "Gemma 4", "input_per_m": 0, "output_per_m": 0 }
+        ]
+      },
+      "ranking_class": "great_value",
+      "notes": "Stacked incentives — 90% caching discount on Flash, 50% batch discount, generous free tier, and open-source Gemma 4. Media generation models (Imagen, Veo, Lyria) included.",
+      "limitations": ["Free-tier data used for model improvement", "Prices double above 200K context on Pro models", "API behavior changes between preview versions"],
+      "source_ids": ["google-ai-pricing"]
+    },
+    {
+      "rank": 4,
+      "provider": "Anthropic (Claude)",
+      "category": "api",
+      "models": [
+        { "name": "Claude Opus 4.8", "tier": "flagship", "context_window": "200K" },
+        { "name": "Claude Sonnet 4.6", "tier": "mid", "context_window": "200K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 5.00,
+        "flagship_output_per_m": 25.00,
+        "cached_input_discount": "90%",
+        "cached_input_price_per_m": null,
+        "batch_discount": "available",
+        "free_tier": "None for API",
+        "models_detail": [
+          { "name": "Opus 4.8", "input_per_m": 5.00, "output_per_m": 25.00 },
+          { "name": "Sonnet 4.6", "input_per_m": 3.00, "output_per_m": 15.00 }
+        ]
+      },
+      "ranking_class": "good_value",
+      "notes": "90% cached read discount is among the best. Unique persistent cache (write-cache) pays for itself in high-context recurring workloads. Best-in-class for coding and structured reasoning.",
+      "limitations": ["Most expensive output pricing (Opus at $25/M)", "200K context limit", "No free API tier", "Cache write adds cost if context changes frequently"],
+      "source_ids": ["anthropic-pricing"]
+    },
+    {
+      "rank": 5,
+      "provider": "OpenAI",
+      "category": "api",
+      "models": [
+        { "name": "GPT-5.5", "tier": "flagship", "context_window": "128K" },
+        { "name": "GPT-5.4", "tier": "flagship", "context_window": "128K" },
+        { "name": "GPT-5.3 Codex", "tier": "mid", "context_window": "1M" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 5.00,
+        "flagship_output_per_m": 30.00,
+        "cached_input_discount": "90%",
+        "cached_input_price_per_m": null,
+        "batch_discount": "available",
+        "free_tier": "None for API",
+        "models_detail": [
+          { "name": "GPT-5.5", "input_per_m": 5.00, "output_per_m": 30.00 },
+          { "name": "GPT-5.4", "input_per_m": 2.50, "output_per_m": 15.00 }
+        ]
+      },
+      "ranking_class": "good_value",
+      "notes": "90% cached input discount brings GPT-5.4 to $0.25/M input — competitive with cheap models for repeated prompts. Most polished API ecosystem with best tool calling and structured output.",
+      "limitations": ["Most expensive per-token pricing", "GPT-5.5 at $30/M output is prohibitive for high-volume use", "No free API tier"],
+      "source_ids": ["openai-pricing"]
+    },
+    {
+      "rank": 6,
+      "provider": "MiniMax",
+      "category": "api",
+      "models": [
+        { "name": "MiniMax-M3", "tier": "flagship", "context_window": "1M" },
+        { "name": "MiniMax-M2.7", "tier": "mid", "context_window": "1M" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 0.29,
+        "flagship_output_per_m": 1.17,
+        "cached_input_discount": "85%",
+        "cached_input_price_per_m": 0.06,
+        "batch_discount": null,
+        "free_tier": "None for API. Token Plan subscription at $14.99/mo.",
+        "models_detail": [
+          { "name": "M3", "input_per_m": 0.29, "output_per_m": 1.17, "cached_per_m": 0.06 },
+          { "name": "M2.7", "input_per_m": 0.29, "output_per_m": 1.17 }
+        ]
+      },
+      "ranking_class": "good_value",
+      "notes": "85% caching discount plus 50% promo pricing on M3. 1M context window. Native multimodal (text, image, video, audio).",
+      "limitations": ["Prices in CNY — international billing may vary", "M3 promo pricing may not be permanent", "Limited international ecosystem"],
+      "source_ids": ["minimax-pricing"]
+    },
+    {
+      "rank": 7,
+      "provider": "xAI (Grok)",
+      "category": "api",
+      "models": [
+        { "name": "Grok 4.3", "tier": "flagship", "context_window": "1M" },
+        { "name": "Grok Build 0.1", "tier": "mid", "context_window": "128K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 1.25,
+        "flagship_output_per_m": 2.50,
+        "cached_input_discount": "84%",
+        "cached_input_price_per_m": 0.20,
+        "batch_discount": "20-50%",
+        "free_tier": "$25/mo free credits for team orgs",
+        "models_detail": [
+          { "name": "Grok 4.3", "input_per_m": 1.25, "output_per_m": 2.50, "cached_per_m": 0.20 },
+          { "name": "Grok Build 0.1", "input_per_m": 1.00, "output_per_m": 2.00 }
+        ]
+      },
+      "ranking_class": "good_value",
+      "notes": "$25/mo free credits is the strongest recurring free credit among Western providers. 84% caching discount and batch savings stack. Built-in tools: web search, X/Twitter search, code execution.",
+      "limitations": ["Smaller ecosystem", "Tool calls cost extra ($5/1K calls)", "Newer API with less third-party integration"],
+      "source_ids": ["xai-pricing"]
+    },
+    {
+      "rank": 8,
+      "provider": "Qwen / Alibaba Cloud",
+      "category": "api",
+      "models": [
+        { "name": "Qwen 3.7 Max", "tier": "flagship", "context_window": "1M" },
+        { "name": "Qwen 3.7 Plus", "tier": "mid", "context_window": "128K" },
+        { "name": "Qwen 3.6 Flash", "tier": "fast", "context_window": "128K" },
+        { "name": "Qwen 3.5 Flash", "tier": "fast", "context_window": "128K" },
+        { "name": "Turbo", "tier": "fast", "context_window": "128K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 1.67,
+        "flagship_output_per_m": 5.00,
+        "cached_input_discount": "varies",
+        "cached_input_price_per_m": null,
+        "batch_discount": "50%",
+        "free_tier": "1M tokens per model for 90 days (China mainland)",
+        "models_detail": [
+          { "name": "3.7 Max", "input_per_m": 1.67, "output_per_m": 5.00 },
+          { "name": "3.7 Plus", "input_per_m": 0.28, "output_per_m": 1.11 },
+          { "name": "3.5 Flash", "input_per_m": 0.028, "output_per_m": 0.28 },
+          { "name": "Turbo", "input_per_m": 0.042, "output_per_m": 0.083 }
+        ]
+      },
+      "ranking_class": "moderate_value",
+      "notes": "Massive model family with tiered pricing for every use case. 50% batch discount. Also hosts third-party models through Alibaba Cloud Bailian.",
+      "limitations": ["Prices in CNY", "Free tier limited to China mainland", "Context-length tiered pricing doubles above 256K"],
+      "source_ids": ["qwen-pricing"]
+    },
+    {
+      "rank": 9,
+      "provider": "OpenCode Zen",
+      "category": "api",
+      "models": [
+        { "name": "~49 models across all major providers", "tier": "flagship", "context_window": "varies" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": null,
+        "flagship_output_per_m": null,
+        "cached_input_discount": "passes through",
+        "cached_input_price_per_m": null,
+        "batch_discount": null,
+        "free_tier": "4 free models (MiMo-V2.5 Free, North Mini Code Free, Nemotron 3 Ultra Free, DeepSeek V4 Flash Free). $20 minimum deposit for paid models.",
+        "platform_fee": "0% (zero markup pass-through)"
+      },
+      "ranking_class": "moderate_value",
+      "notes": "Zero markup means you get provider-level pricing without the middleman. Volume discounts available. 4 free models with no limits. Single API key for every major provider.",
+      "limitations": ["$20 minimum top-up", "Not a model provider — passes through underlying pricing", "No batch API"],
+      "source_ids": ["opencode-pricing"]
+    },
+    {
+      "rank": 10,
+      "provider": "Fireworks AI",
+      "category": "api",
+      "models": [
+        { "name": "100+ open and proprietary models", "tier": "flagship", "context_window": "varies" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 1.74,
+        "flagship_output_per_m": 3.48,
+        "cached_input_discount": "50%",
+        "cached_input_price_per_m": null,
+        "batch_discount": "50%",
+        "free_tier": "$1 in free credits on signup",
+        "models_detail": [
+          { "name": "DeepSeek V4 Pro", "input_per_m": 1.74, "output_per_m": 3.48 },
+          { "name": "DeepSeek V4 Flash", "input_per_m": 0.14, "output_per_m": 0.28 },
+          { "name": "Qwen 3.6 Plus", "input_per_m": 0.50, "output_per_m": 3.00 }
+        ]
+      },
+      "ranking_class": "moderate_value",
+      "notes": "50% off both caching AND batch by default. Two-tier serving (Standard and Priority) lets you trade latency for cost.",
+      "limitations": ["Markup over direct provider pricing", "Standard tier has variable latency"],
+      "source_ids": ["fireworks-pricing"]
+    },
+    {
+      "rank": 11,
+      "provider": "Amazon Bedrock",
+      "category": "api",
+      "models": [
+        { "name": "18+ vendors (OpenAI, Anthropic, Mistral, DeepSeek, Meta, Cohere, etc.)", "tier": "flagship", "context_window": "varies" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 2.75,
+        "flagship_output_per_m": 16.50,
+        "cached_input_discount": "select models",
+        "cached_input_price_per_m": null,
+        "batch_discount": "50%",
+        "free_tier": "Free tier for select models during initial period",
+        "models_detail": [
+          { "name": "DeepSeek v3.2", "input_per_m": 0.62, "output_per_m": 1.85 },
+          { "name": "Mistral Large 3", "input_per_m": 0.50, "output_per_m": 1.50 },
+          { "name": "GPT-5.4", "input_per_m": 2.75, "output_per_m": 16.50 }
+        ]
+      },
+      "ranking_class": "moderate_value",
+      "notes": "Multiple pricing tiers that stack — Standard/Flex/Batch/Reserved. 50% batch discount. Enterprise features (Guardrails, Knowledge Bases, prompt routing).",
+      "limitations": ["Highest markup of any infrastructure provider", "Complex pricing structure", "Provisioned Throughput requires commitment"],
+      "source_ids": ["bedrock-pricing"]
+    },
+    {
+      "rank": 12,
+      "provider": "OpenRouter",
+      "category": "api",
+      "models": [
+        { "name": "400+ models across 60+ providers", "tier": "flagship", "context_window": "varies" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": null,
+        "flagship_output_per_m": null,
+        "cached_input_discount": "passes through",
+        "cached_input_price_per_m": null,
+        "batch_discount": null,
+        "free_tier": "25+ free models (50 requests/day)",
+        "platform_fee": "5.5% (eliminated with BYOK — 1M free requests/month)"
+      },
+      "ranking_class": "moderate_value",
+      "notes": "25+ free models and BYOK eliminates the platform fee entirely. Auto-routing picks the cheapest/fastest provider. No minimum spend.",
+      "limitations": ["5.5% fee adds up at scale (eliminated with BYOK)", "Free models have low rate limits", "Routing can introduce latency variability"],
+      "source_ids": ["openrouter-pricing"]
+    },
+    {
+      "rank": 13,
+      "provider": "Xiaomi MiMo",
+      "category": "api",
+      "models": [
+        { "name": "MiMo-V2.5 Pro", "tier": "flagship", "context_window": "1M" },
+        { "name": "MiMo-V2.5", "tier": "mid", "context_window": "1M" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 0.87,
+        "flagship_output_per_m": 0.87,
+        "cached_input_discount": "not documented",
+        "cached_input_price_per_m": null,
+        "batch_discount": null,
+        "free_tier": "1M tokens for 90 days via Alibaba Cloud for new users",
+        "models_detail": [
+          { "name": "V2.5 Pro", "input_per_m": 0.87, "output_per_m": 0.87 },
+          { "name": "V2.5", "input_per_m": 0.28, "output_per_m": 0.28 }
+        ]
+      },
+      "ranking_class": "limited_value",
+      "notes": "Frontier-class model at extremely competitive prices. MiMo-V2.5 at ~$0.28/M blended rivals models costing 10x more. Available through Alibaba Cloud Bailian.",
+      "limitations": ["No caching or batch incentives documented", "No direct API — available only through Alibaba Cloud or third-party routers", "Newer platform with smaller ecosystem"],
+      "source_ids": ["mimo-pricing"]
+    },
+    {
+      "rank": 14,
+      "provider": "Together AI",
+      "category": "api",
+      "models": [
+        { "name": "100+ open-source models", "tier": "open", "context_window": "varies" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 2.10,
+        "flagship_output_per_m": 4.40,
+        "cached_input_discount": "select models",
+        "cached_input_price_per_m": 0.20,
+        "batch_discount": "available",
+        "free_tier": "Not clearly defined (signup credits may apply)",
+        "models_detail": [
+          { "name": "DeepSeek V4 Pro", "input_per_m": 2.10, "output_per_m": 4.40, "cached_per_m": 0.20 },
+          { "name": "Qwen 3.6 Plus", "input_per_m": 0.50, "output_per_m": 3.00 },
+          { "name": "LFM2 24B", "input_per_m": 0.03, "output_per_m": 0.12 }
+        ]
+      },
+      "ranking_class": "limited_value",
+      "notes": "Best platform for open-source model hosting with fine-tuning (LoRA and full). GPU cluster rental (H100 at $4.99/hr). Dedicated endpoints for production.",
+      "limitations": ["Markup over direct provider pricing", "Limited caching/batch incentives compared to competitors"],
+      "source_ids": ["together-pricing"]
+    },
+    {
+      "rank": 15,
+      "provider": "Mistral",
+      "category": "api",
+      "models": [
+        { "name": "Medium 3.5", "tier": "flagship", "context_window": "128K" },
+        { "name": "Large 3", "tier": "mid", "context_window": "128K" },
+        { "name": "Small 4", "tier": "fast", "context_window": "128K" },
+        { "name": "Magistral", "tier": "mid", "context_window": "128K" },
+        { "name": "Devstral", "tier": "mid", "context_window": "128K" }
+      ],
+      "pricing": {
+        "flagship_input_per_m": 1.50,
+        "flagship_output_per_m": 7.50,
+        "cached_input_discount": "none",
+        "cached_input_price_per_m": null,
+        "batch_discount": null,
+        "free_tier": "Leanstral (Lean 4 coding) is free. No general free API tier.",
+        "models_detail": [
+          { "name": "Medium 3.5", "input_per_m": 1.50, "output_per_m": 7.50 },
+          { "name": "Large 3", "input_per_m": 0.50, "output_per_m": 1.50 },
+          { "name": "Small 4", "input_per_m": 0.10, "output_per_m": 0.30 }
+        ]
+      },
+      "ranking_class": "limited_value",
+      "notes": "Every model is open-weight — self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
+      "limitations": ["No caching or batch discounts", "Fewest savings levers of any provider", "Self-hosting requires significant GPU resources"],
+      "source_ids": ["mistral-pricing"]
+    }
+  ]
+}
