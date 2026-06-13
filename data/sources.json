@@ -103,15 +103,6 @@
       "reliability": "primary"
     },
     {
-      "id": "minimax-hailuo",
-      "provider": "MiniMax",
-      "url": "https://hailuoai.video",
-      "type": "product_page",
-      "description": "Hailuo AI \u2014 MiniMax international consumer video/image generation platform. Subscription plans visible after login. JS-rendered SPA."
-      "last_verified": "2026-06-13",
-      "reliability": "primary"
-    },
-    {
       "id": "xai-pricing",
       "provider": "xAI",
       "url": "https://docs.x.ai/developers/pricing",
