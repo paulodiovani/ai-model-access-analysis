@@ -1,0 +1,57 @@
+name: Validate Data Files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**/*.json"
+  pull_request:
+    paths:
+      - "data/**/*.json"
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON syntax with jq
+        run: |
+          errors=0
+          for f in data/*.json; do
+            echo -n "Validating $f ... "
+            if jq empty "$f" 2>/tmp/jq_err; then
+              echo "OK"
+            else
+              echo "FAILED"
+              cat /tmp/jq_err
+              errors=$((errors + 1))
+            fi
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors JSON file(s) failed validation"
+            exit 1
+          fi
+          echo "All JSON files are valid."
+
+      - name: Check source_ids reference valid sources
+        run: |
+          # Extract all valid source IDs
+          source_ids=$(jq -r '.sources[].id' data/sources.json | sort)
+          errors=0
+
+          for f in data/20-rankings.json data/10-rankings.json data/free-rankings.json data/api-pricing.json; do
+            [ -f "$f" ] || continue
+            refs=$(jq -r '[.entries[]?.source_ids[]?] | unique | .[]' "$f" 2>/dev/null)
+            for ref in $refs; do
+              if ! echo "$source_ids" | grep -qx "$ref"; then
+                echo "::error file=$f::Dangling source_id '$ref' not found in data/sources.json"
+                errors=$((errors + 1))
+              fi
+            done
+          done
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors dangling source_id reference(s) found"
+            exit 1
+          fi
+          echo "All source_ids are valid."
