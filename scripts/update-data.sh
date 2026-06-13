@@ -6,7 +6,6 @@
 #
 # Options:
 #   --fetch-only    Only fetch data from source URLs (stub for now)
-#   --charts-only   Only regenerate charts from existing data
 #   --pages-only    Only regenerate markdown pages from existing data
 #   --dry-run       Show what would be done without making changes
 #   --no-commit     Skip git commit step
@@ -15,9 +14,8 @@
 # Steps:
 # 1. Fetch latest data from source URLs (web scraping / API calls)
 # 2. Update data/*.json files
-# 3. Regenerate charts via gnuplot
-# 4. Regenerate markdown pages from data
-# 5. Git commit + push if changes detected
+# 3. Regenerate markdown pages from data
+# 4. Git commit + push if changes detected
 # =============================================================================
 
 set -euo pipefail
@@ -25,13 +23,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 DATA_DIR="$PROJECT_ROOT/data"
-CHARTS_DIR="$PROJECT_ROOT/docs/charts"
 CONTENT_DIR="$PROJECT_ROOT/docs/content"
-DATA_TO_CHARTS="$SCRIPT_DIR/data-to-charts.py"
 
 # Defaults
 FETCH_ONLY=false
-CHARTS_ONLY=false
 PAGES_ONLY=false
 DRY_RUN=false
 NO_COMMIT=false
@@ -47,12 +42,11 @@ err()   { echo "[$(date '+%H:%M:%S')] ✗ $*" >&2; }
 for arg in "$@"; do
     case "$arg" in
         --fetch-only)  FETCH_ONLY=true ;;
-        --charts-only) CHARTS_ONLY=true ;;
         --pages-only)  PAGES_ONLY=true ;;
         --dry-run)     DRY_RUN=true ;;
         --no-commit)   NO_COMMIT=true ;;
         --help|-h)
-            head -n 18 "$0" | tail -n +2 | sed 's/^# \?//'
+            head -n 16 "$0" | tail -n +2 | sed 's/^# \?//'
             exit 0
             ;;
         *)
@@ -63,12 +57,8 @@ for arg in "$@"; do
 done
 
 # Validate mutually exclusive flags
-EXCLUSIVE_COUNT=0
-$FETCH_ONLY  && EXCLUSIVE_COUNT=$((EXCLUSIVE_COUNT + 1))
-$CHARTS_ONLY && EXCLUSIVE_COUNT=$((EXCLUSIVE_COUNT + 1))
-$PAGES_ONLY  && EXCLUSIVE_COUNT=$((EXCLUSIVE_COUNT + 1))
-if [ "$EXCLUSIVE_COUNT" -gt 1 ]; then
-    err "Only one of --fetch-only, --charts-only, --pages-only can be specified."
+if $FETCH_ONLY && $PAGES_ONLY; then
+    err "Only one of --fetch-only, --pages-only can be specified."
     exit 1
 fi
 
@@ -114,32 +104,10 @@ step_check_changes() {
 }
 
 # =============================================================================
-# Step 3: Regenerate charts
-# =============================================================================
-step_charts() {
-    log "Step 3: Regenerating charts..."
-
-    if [ ! -f "$DATA_TO_CHARTS" ]; then
-        err "Chart generator not found: $DATA_TO_CHARTS"
-        return 1
-    fi
-
-    mkdir -p "$CHARTS_DIR"
-
-    if $DRY_RUN; then
-        log "[dry-run] Would run: python3 $DATA_TO_CHARTS"
-        return 0
-    fi
-
-    python3 "$DATA_TO_CHARTS"
-    log_ok "Charts regenerated."
-}
-
-# =============================================================================
-# Step 4: Regenerate markdown pages
+# Step 3: Regenerate markdown pages
 # =============================================================================
 step_pages() {
-    log "Step 4: Regenerating markdown pages..."
+    log "Step 3: Regenerating markdown pages..."
 
     # The markdown pages are currently maintained manually, following the
     # templates defined in scripts/templates/README.md.
@@ -152,40 +120,11 @@ step_pages() {
         return 0
     fi
 
-    # Check if chart references exist in pages
-    local pages_updated=0
-    for page in "$CONTENT_DIR"/*.md; do
-        local basename
-        basename=$(basename "$page")
-        case "$basename" in
-            20-rankings.md)
-                if ! grep -q 'charts/20-rankings-value.png' "$page" 2>/dev/null; then
-                    warn "$basename is missing chart reference for 20-rankings-value.png"
-                fi
-                ;;
-            10-rankings.md)
-                if ! grep -q 'charts/10-rankings-value.png' "$page" 2>/dev/null; then
-                    warn "$basename is missing chart reference for 10-rankings-value.png"
-                fi
-                ;;
-            free-rankings.md)
-                if ! grep -q 'charts/free-rankings.png' "$page" 2>/dev/null; then
-                    warn "$basename is missing chart reference for free-rankings.png"
-                fi
-                ;;
-            api-pricing.md)
-                if ! grep -q 'charts/api-pricing-comparison.png' "$page" 2>/dev/null; then
-                    warn "$basename is missing chart reference for api-pricing-comparison.png"
-                fi
-                ;;
-        esac
-    done
-
     log_ok "Page check complete. Update pages manually or with future auto-generator."
 }
 
 # =============================================================================
-# Step 5: Git commit + push
+# Step 4: Git commit + push
 # =============================================================================
 step_commit() {
     if $NO_COMMIT; then
@@ -193,7 +132,7 @@ step_commit() {
         return 0
     fi
 
-    log "Step 5: Checking for changes to commit..."
+    log "Step 4: Checking for changes to commit..."
 
     cd "$PROJECT_ROOT"
 
@@ -210,7 +149,7 @@ step_commit() {
     fi
 
     # Stage all changes
-    git add docs/charts/ docs/content/ data/ scripts/
+    git add docs/content/ data/ scripts/
 
     # Build commit message
     local DATE
@@ -222,7 +161,6 @@ step_commit() {
 
     local SUMMARY=""
     # Identify what changed
-    echo "$CHANGED_FILES" | grep -q '^docs/charts/' && SUMMARY="${SUMMARY}charts, "
     echo "$CHANGED_FILES" | grep -q '^docs/content/' && SUMMARY="${SUMMARY}pages, "
     echo "$CHANGED_FILES" | grep -q '^data/' && SUMMARY="${SUMMARY}data, "
     echo "$CHANGED_FILES" | grep -q '^scripts/' && SUMMARY="${SUMMARY}scripts, "
@@ -257,15 +195,14 @@ main() {
     log "Project root: $PROJECT_ROOT"
     log "Mode: $(
         $FETCH_ONLY  && echo "fetch-only" ||
-        $CHARTS_ONLY && echo "charts-only" ||
         $PAGES_ONLY  && echo "pages-only" ||
         echo "full"
     )"
     $DRY_RUN && log "*** DRY RUN — no changes will be made ***"
     log ""
 
-    # Step 1: Fetch (always runs unless --charts-only or --pages-only)
-    if ! $CHARTS_ONLY && ! $PAGES_ONLY; then
+    # Step 1: Fetch (always runs unless --pages-only)
+    if ! $PAGES_ONLY; then
         step_fetch
     else
         log_skip "Data fetching (not requested)"
@@ -277,21 +214,14 @@ main() {
         DATA_CHANGED=true
     fi
 
-    # Step 3: Charts
-    if ! $FETCH_ONLY && ! $PAGES_ONLY; then
-        step_charts
-    else
-        log_skip "Chart generation (not requested)"
-    fi
-
-    # Step 4: Pages
-    if ! $FETCH_ONLY && ! $CHARTS_ONLY; then
+    # Step 3: Pages
+    if ! $FETCH_ONLY; then
         step_pages
     else
         log_skip "Page update (not requested)"
     fi
 
-    # Step 5: Commit
+    # Step 4: Commit
     if ! $FETCH_ONLY; then
         step_commit
     else

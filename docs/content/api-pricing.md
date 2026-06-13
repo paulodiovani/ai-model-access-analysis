@@ -173,16 +173,6 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 
 ---
 
-## **Charts**
-
-### Pricing Comparison
-![API Pricing Comparison](../charts/api-pricing-comparison.png)
-
-### Cache Discounts
-![Cache Discount Comparison](../charts/api-cache-discount.png)
-
----
-
 ## **Summary: Value Incentives Comparison**
 
 | Rank | Provider | Best Discount | Free Credits/Tier | Batch |

@@ -54,10 +54,6 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 * **What your $20 gets you:** Costs $10/month, but lacks the core reasoning capabilities.  
 * **Why it's \\#8:** The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking our $20 budget threshold.
 
-## **Charts**
-
-![Computational Value Chart](../charts/20-rankings-value.png)
-
 ## **Summary Comparison Table**
 
 | Rank | Provider / Plan | Model Tier | $20 Budget Outcome | Limit Vulnerability |

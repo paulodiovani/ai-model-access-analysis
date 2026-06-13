@@ -90,12 +90,6 @@ This analysis evaluates free tiers from major AI providers. If you're a develope
 
 ---
 
-## **Charts**
-
-![Free Tier Rankings Chart](../charts/free-rankings.png)
-
----
-
 ## **Summary Table: Free Tier Overview**
 
 | Rank | Provider | Top Free Model | Primary Limit | Main Limitation | Data Privacy |

@@ -30,10 +30,6 @@ Here is the definitive ranking from **best value for money (Best)** to **least c
 * **What your $10 gets you:** Exactly covers the $10/month Lite subscription.  
 * **Why it drops to \#4:** The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions and quick lookups — but it lacks the deep reasoning and coding capabilities that the other options on this list provide.
 
-## **Charts**
-
-![Computational Value Chart](../charts/10-rankings-value.png)
-
 ## **Summary Comparison Table**
 
 | Rank | Provider / Plan | Model Tier | $10 Budget Outcome | Limit Vulnerability |
