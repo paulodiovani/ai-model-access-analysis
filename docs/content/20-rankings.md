@@ -48,11 +48,15 @@ Here is the definitive ranking from **most raw flagship usage volume (Best)** to
 * **What your $20 gets you:** Costs $14.99/month.  
 * **Why it's \#7:** It relies on a rigid **1,000-credit monthly pool**. When those credits are exhausted by heavy generation workloads, the tier stops dead until the next billing cycle.
 
-### **8\. Grok (SuperGrok Lite)**
+### **8\\. Grok (SuperGrok Lite)**
 
 * **The Model Class:** Social & Search Flagships (*Grok 4*)  
 * **What your $20 gets you:** Costs $10/month, but lacks the core reasoning capabilities.  
-* **Why it's \#8:** The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking our $20 budget threshold.
+* **Why it's \\#8:** The $10 Lite tier limits you to basic capabilities. Accessing the actual flagship reasoning engine (Grok 4.3 Standard) requires a $30/month subscription, completely breaking our $20 budget threshold.
+
+## **Charts**
+
+![Computational Value Chart](../charts/20-rankings-value.png)
 
 ## **Summary Comparison Table**
 
