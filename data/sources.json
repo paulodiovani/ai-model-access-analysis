@@ -87,18 +87,18 @@
     {
       "id": "zai-coding-plan",
       "provider": "Z.ai / Zhipu AI",
-      "url": "https://z.ai",
+      "url": "https://open.bigmodel.cn/pricing",
       "type": "subscription_page",
-      "description": "Z.ai Coding Plan Lite subscription",
+      "description": "Z.ai / Zhipu AI API and consumer pricing. GLM model pricing including coding plans. In Chinese.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
     {
       "id": "minimax-pricing",
       "provider": "MiniMax",
-      "url": "https://platform.minimaxi.com/docs/guides/pricing-billing",
+      "url": "https://platform.minimaxi.com/docs/pricing/overview",
       "type": "pricing_page",
-      "description": "MiniMax API pricing (M3, M2.7)",
+      "description": "MiniMax API pricing (M3, M2.7, speech, video, image models). In Chinese.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
@@ -106,8 +106,8 @@
       "id": "minimax-hailuo",
       "provider": "MiniMax",
       "url": "https://hailuoai.com",
-      "type": "subscription_page",
-      "description": "Hailuo AI (MiniMax) subscription plans",
+      "type": "product_page",
+      "description": "Hailuo AI — MiniMax consumer video/image generation platform. Subscription plans visible after login. JS-rendered SPA.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
@@ -123,27 +123,27 @@
     {
       "id": "xai-grok-plans",
       "provider": "xAI",
-      "url": "https://grok.com",
+      "url": "https://grok.com/pricing",
       "type": "subscription_page",
-      "description": "Grok subscription plans (Free, Lite, SuperGrok)",
+      "description": "Grok subscription plans (Free, SuperGrok). JS-rendered — requires browser to view. API pricing at docs.x.ai.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
     {
       "id": "qwen-pricing",
       "provider": "Qwen / Alibaba Cloud",
-      "url": "https://help.aliyun.com/zh/model-studio/models",
+      "url": "https://help.aliyun.com/zh/model-studio/getting-started/models",
       "type": "pricing_page",
-      "description": "Qwen model pricing via Alibaba Cloud",
+      "description": "Qwen model catalog via Alibaba Cloud Model Studio — links to per-model pricing. In Chinese.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
     {
       "id": "qwen-web",
       "provider": "Qwen / Alibaba",
-      "url": "https://qwen.ai",
+      "url": "https://chat.qwen.ai",
       "type": "product_page",
-      "description": "Qwen standalone web app",
+      "description": "Qwen consumer chat web app (free access to Qwen models). JS-rendered.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
@@ -186,9 +186,9 @@
     {
       "id": "mimo-code",
       "provider": "Xiaomi MiMo",
-      "url": "https://github.com/xiaomi/mimo-code",
+      "url": "https://github.com/MiMo-Code",
       "type": "product_page",
-      "description": "MiMo Code terminal-native AI coding agent",
+      "description": "MiMo Code — terminal-native AI coding agent by Xiaomi. Free during promotional period.",
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },

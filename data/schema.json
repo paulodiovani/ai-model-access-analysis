@@ -12,8 +12,7 @@
     },
     "page": {
       "type": "string",
-      "enum": ["20-rankings", "10-rankings", "free-rankings", "api-pricing"],
-      "description": "Identifier matching the page filename"
+      "description": "Identifier matching the page filename (e.g., '20-rankings', 'free-rankings')"
     },
     "title": {
       "type": "string",
