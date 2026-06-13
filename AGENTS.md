@@ -52,10 +52,19 @@ The **$10 and $20 ranking pages are for subscription-based plans only.** Before 
 - Does the plan fit within the budget threshold ($10 or $20)?
 - If it's API-only / pay-per-token → do NOT add to paid rankings. Add to free rankings only if there's a free tier.
 
+### API Pricing Page — Production Focus
+The `api-pricing.md` page is for **production API usage** — applications and services calling AI models at scale. When adding or updating providers:
+- Focus on per-token cost, optimization features (caching, batching, routing), and production reliability
+- Include both direct providers and infrastructure/aggregator platforms
+- Always verify prices from official pricing pages
+- Note: prices are standardized per model across providers — what differentiates providers are edge cases (free credits, cache discounts, batch tiers, routing, model variety)
+
 ## 📁 Project Structure
 
 - `docs/content/20-rankings.md` — $20 budget analysis
+- `docs/content/10-rankings.md` — $10 budget analysis
 - `docs/content/free-rankings.md` — Free tier analysis
+- `docs/content/api-pricing.md` — API pricing guide for production usage
 - `docs/content/about.md` — About the project
 - `docs/index.html` — SPA entry point
 - `.github/ISSUE_TEMPLATE/` — Issue templates
