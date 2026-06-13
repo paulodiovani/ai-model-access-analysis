@@ -105,9 +105,9 @@
     {
       "id": "minimax-hailuo",
       "provider": "MiniMax",
-      "url": "https://hailuoai.com",
+      "url": "https://hailuoai.video",
       "type": "product_page",
-      "description": "Hailuo AI — MiniMax consumer video/image generation platform. Subscription plans visible after login. JS-rendered SPA.",
+      "description": "Hailuo AI \u2014 MiniMax international consumer video/image generation platform. Subscription plans visible after login. JS-rendered SPA."
       "last_verified": "2026-06-13",
       "reliability": "primary"
     },
