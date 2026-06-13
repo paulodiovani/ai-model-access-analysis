@@ -66,7 +66,7 @@ All pricing, rankings, and analysis data lives in structured JSON files under `d
 
 **When updating information:**
 1. Update the data file (`data/*.json`) FIRST
-2. Then regenerate the markdown pages and charts
+2. Then regenerate the markdown pages
 3. Never edit pricing or ranking data directly in markdown
 
 ### Schema Compliance
@@ -95,10 +95,10 @@ When updating existing provider data:
 3. Update the data file with any changes
 4. Update `last_verified` dates in both `data/sources.json` and the entry
 5. If prices changed, re-evaluate rankings (ranks may shift)
-6. Regenerate charts and pages
+6. Regenerate pages
 
 ### Ranking Classifications
-Entries are classified using the `ranking_class` field. See [docs/content/ranking-classifications.md](docs/content/ranking-classifications.md) for full definitions of all data points, classifications, limit types, and model tiers.
+Entries are classified using the `ranking_class` field.
 
 **Classification tiers:**
 - `exceptional_value` — Best in category, strong ROI
@@ -130,7 +130,6 @@ Entries are classified using the `ranking_class` field. See [docs/content/rankin
 │   │   ├── free-rankings.md     # Free tier analysis
 │   │   ├── api-pricing.md       # API pricing guide
 │   │   └── about.md             # About the project
-│   └── charts/                  # Generated chart images
 ├── scripts/
 │   └── update-data.sh           # Data update automation
 │   └── templates/               # Page templates for data-driven generation
