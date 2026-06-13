@@ -97,6 +97,18 @@ When updating existing provider data:
 5. If prices changed, re-evaluate rankings (ranks may shift)
 6. Regenerate pages
 
+### Unified Entry Fields
+All entries across ALL data files use the same field names. When a field doesn't apply to a page type, use an empty string (`""`) or `null`. Never omit fields.
+
+**Core fields (all entries):** `rank`, `provider`, `plan`, `category`, `model_class`, `models`, `value_description`, `limit_description`, `limit_vulnerability`, `notes`, `ranking_class`, `source_ids`
+
+**Derived fields (auto-generated):** `rank_display`, `provider_plan`, `value_description_short` — these are computed from core fields for the summary table.
+
+**Optional fields (use null/empty when not applicable):** `monthly_price_usd`, `value_multiplier`, `computational_value_usd`, `primary_limit`, `main_limitation`, `api_access`, `data_privacy`, `pricing`, `limitations`, `verdict`
+
+### Single Template Rule
+ALL pages follow `scripts/templates/page.md.tmpl`. Never create per-page templates. The template has no conditional sections — every page uses the same structure.
+
 ### Ranking Classifications
 Entries are classified using the `ranking_class` field.
 
@@ -131,13 +143,10 @@ Entries are classified using the `ranking_class` field.
 │   │   ├── api-pricing.md       # API pricing guide
 │   │   └── about.md             # About the project
 ├── scripts/
-│   └── update-data.sh           # Data update automation
-│   └── templates/               # Page templates for data-driven generation
+│   ├── update-data.sh           # Data update automation
+│   └── templates/               # Page templates
 │       ├── README.md            # Template documentation
-│       ├── 20-rankings.md.tmpl  # $20 rankings template
-│       ├── 10-rankings.md.tmpl  # $10 rankings template
-│       ├── free-rankings.md.tmpl # Free rankings template
-│       └── api-pricing.md.tmpl  # API pricing template
+│       └── page.md.tmpl         # Single canonical template for all pages
 └── .github/
     ├── ISSUE_TEMPLATE/
     └── pull_request_template.md

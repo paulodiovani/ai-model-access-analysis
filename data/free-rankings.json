@@ -12,16 +12,43 @@
       "category": "free",
       "model_class": "Ecosystem Flagships",
       "models": [
-        { "name": "Gemini 1.5 Pro", "tier": "flagship", "context_window": "1M" },
-        { "name": "Gemini 1.5 Flash", "tier": "fast", "context_window": "1M" }
+        {
+          "name": "Gemini 1.5 Pro",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "Gemini 1.5 Flash",
+          "tier": "fast",
+          "context_window": "1M"
+        }
       ],
-      "primary_limit": "rate_limit",
+      "primary_limit": "Rate Limit",
       "main_limitation": "High Latency",
       "api_access": true,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "exceptional_value",
       "notes": "Massive free quotas for Gemini 1.5 series. Extremely generous token limits and a 1M+ context window, with full API access. Severe latency on the free tier, and data is used for model improvement.",
-      "source_ids": ["google-ai-pricing"]
+      "source_ids": [
+        "google-ai-pricing"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#1**",
+      "provider_plan": "**Google AI Studio**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 2,
@@ -29,15 +56,39 @@
       "category": "free",
       "model_class": "Open Flagships",
       "models": [
-        { "name": "MiMo-V2.5 Pro", "tier": "flagship", "context_window": "1M", "params": "1T total, 42B active" }
+        {
+          "name": "MiMo-V2.5 Pro",
+          "tier": "flagship",
+          "context_window": "1M",
+          "params": "1T total, 42B active"
+        }
       ],
-      "primary_limit": "time_limited",
+      "primary_limit": "Time-Limited",
       "main_limitation": "Promo May End",
       "api_access": true,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "exceptional_value",
       "notes": "Full access to MiMo-V2.5 Pro through a complete coding agent. No login or credit card required — install with one command. Free access is promotional and may end without notice.",
-      "source_ids": ["mimo-code"]
+      "source_ids": [
+        "mimo-code"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#2**",
+      "provider_plan": "**Xiaomi MiMo Code**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 3,
@@ -45,15 +96,39 @@
       "category": "free",
       "model_class": "Proprietary Flagships",
       "models": [
-        { "name": "DeepSeek-V4", "tier": "flagship", "context_window": "1M" }
+        {
+          "name": "DeepSeek-V4",
+          "tier": "flagship",
+          "context_window": "1M"
+        }
       ],
-      "primary_limit": "web_only",
+      "primary_limit": "Web Only",
       "main_limitation": "No Free API",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "great_value",
       "notes": "Free access to DeepSeek-V4 via chat.deepseek.com and the mobile app. Full flagship V4 model with 1M token context window, thinking mode, and multimodal capabilities. Web/app only — API is pay-as-you-go. Based in China.",
-      "source_ids": ["deepseek-chat", "deepseek-pricing"]
+      "source_ids": [
+        "deepseek-chat",
+        "deepseek-pricing"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#3**",
+      "provider_plan": "**DeepSeek**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 4,
@@ -61,15 +136,38 @@
       "category": "free",
       "model_class": "Open Source Library",
       "models": [
-        { "name": "Various Open Models", "tier": "open", "context_window": "varies" }
+        {
+          "name": "Various Open Models",
+          "tier": "open",
+          "context_window": "varies"
+        }
       ],
-      "primary_limit": "rate_limit",
+      "primary_limit": "Rate Limit",
       "main_limitation": "Cold Starts",
       "api_access": true,
-      "data_privacy": "varies",
+      "data_privacy": "Varies",
       "ranking_class": "great_value",
       "notes": "~$0.10/month in free credits per account. Free access to a massive library of open-weights models via Inference API. Cold start delays, rate limits vary by model popularity.",
-      "source_ids": ["huggingface-inference"]
+      "source_ids": [
+        "huggingface-inference"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#4**",
+      "provider_plan": "**Hugging Face**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 5,
@@ -77,15 +175,38 @@
       "category": "free",
       "model_class": "Chinese Lab Flagships",
       "models": [
-        { "name": "Qwen 3.7 Max", "tier": "flagship", "context_window": "1M" }
+        {
+          "name": "Qwen 3.7 Max",
+          "tier": "flagship",
+          "context_window": "1M"
+        }
       ],
-      "primary_limit": "web_only",
+      "primary_limit": "Web Only",
       "main_limitation": "No API",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "good_value",
       "notes": "Flagship Qwen 3.7 Max is free on the web interface. No official API for the free tier — web-only. High latency during peak Asian business hours.",
-      "source_ids": ["qwen-web"]
+      "source_ids": [
+        "qwen-web"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#5**",
+      "provider_plan": "**Qwen Standalone**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 6,
@@ -93,16 +214,43 @@
       "category": "free",
       "model_class": "Multimodal Flagships",
       "models": [
-        { "name": "K2.5", "tier": "flagship", "context_window": "256K" },
-        { "name": "K2.6", "tier": "flagship", "context_window": "256K" }
+        {
+          "name": "K2.5",
+          "tier": "flagship",
+          "context_window": "256K"
+        },
+        {
+          "name": "K2.6",
+          "tier": "flagship",
+          "context_window": "256K"
+        }
       ],
-      "primary_limit": "web_only",
+      "primary_limit": "Web Only",
       "main_limitation": "No Free API",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "good_value",
       "notes": "Free access to Kimi's consumer chat interface with daily usage limits. Access to multimodal models for text, image, and video tasks. 256K context window. Developer platform is pay-as-you-go only.",
-      "source_ids": ["kimi-web"]
+      "source_ids": [
+        "kimi-web"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#6**",
+      "provider_plan": "**Kimi (Moonshot AI)**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 7,
@@ -110,16 +258,43 @@
       "category": "free",
       "model_class": "Proprietary Flagships",
       "models": [
-        { "name": "GPT-4o", "tier": "flagship", "context_window": "128K" },
-        { "name": "GPT-4o-mini", "tier": "fast", "context_window": "128K" }
+        {
+          "name": "GPT-4o",
+          "tier": "flagship",
+          "context_window": "128K"
+        },
+        {
+          "name": "GPT-4o-mini",
+          "tier": "fast",
+          "context_window": "128K"
+        }
       ],
-      "primary_limit": "message_cap",
+      "primary_limit": "Message Cap",
       "main_limitation": "Model Downgrade",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "moderate_value",
       "notes": "Limited access to GPT-4o / 4o-mini. Strict message caps — once the flagship limit is hit, downgraded to significantly weaker model (mini). Window for using the full model is short.",
-      "source_ids": ["openai-chatgpt-plans"]
+      "source_ids": [
+        "openai-chatgpt-plans"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#7**",
+      "provider_plan": "**OpenAI**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 8,
@@ -127,15 +302,38 @@
       "category": "free",
       "model_class": "Various Open Models",
       "models": [
-        { "name": "Various Free Models", "tier": "open", "context_window": "varies" }
+        {
+          "name": "Various Free Models",
+          "tier": "open",
+          "context_window": "varies"
+        }
       ],
-      "primary_limit": "rate_limit",
+      "primary_limit": "Rate Limit",
       "main_limitation": "Slow / Low Priority",
       "api_access": true,
-      "data_privacy": "varies",
+      "data_privacy": "Varies",
       "ranking_class": "moderate_value",
       "notes": "Access to a curated list of free models via a unified API. Free models are heavily throttled with very low rate limits. If the provider is overloaded, free requests are the first to be dropped.",
-      "source_ids": ["openrouter-pricing"]
+      "source_ids": [
+        "openrouter-pricing"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#8**",
+      "provider_plan": "**OpenRouter**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 9,
@@ -143,15 +341,38 @@
       "category": "free",
       "model_class": "Social & Search",
       "models": [
-        { "name": "Grok Basic", "tier": "fast", "context_window": "32K" }
+        {
+          "name": "Grok Basic",
+          "tier": "fast",
+          "context_window": "32K"
+        }
       ],
-      "primary_limit": "context_window_limit",
+      "primary_limit": "Context Window",
       "main_limitation": "Small Context",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "limited_value",
       "notes": "Limited access to Grok models. Fast responses for basic queries. The free tier significantly limits the context window, making it impractical for tasks requiring large amounts of text or code.",
-      "source_ids": ["xai-grok-plans"]
+      "source_ids": [
+        "xai-grok-plans"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#9**",
+      "provider_plan": "**Grok**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 10,
@@ -159,15 +380,38 @@
       "category": "free",
       "model_class": "Proprietary Flagships",
       "models": [
-        { "name": "Claude 3.5 Sonnet", "tier": "flagship", "context_window": "200K" }
+        {
+          "name": "Claude 3.5 Sonnet",
+          "tier": "flagship",
+          "context_window": "200K"
+        }
       ],
-      "primary_limit": "message_cap",
+      "primary_limit": "Message Cap",
       "main_limitation": "Tight Message Caps",
       "api_access": false,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "limited_value",
       "notes": "Limited messages with Claude 3.5 Sonnet. Most restrictive message caps in the industry — lockout in as few as 5-10 deep prompts. No access to Claude Code CLI.",
-      "source_ids": ["anthropic-pricing"]
+      "source_ids": [
+        "anthropic-pricing"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#10**",
+      "provider_plan": "**Claude.ai**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 11,
@@ -175,15 +419,38 @@
       "category": "free",
       "model_class": "Open Models",
       "models": [
-        { "name": "Free Open-Weights Models", "tier": "open", "context_window": "varies" }
+        {
+          "name": "Free Open-Weights Models",
+          "tier": "open",
+          "context_window": "varies"
+        }
       ],
-      "primary_limit": "none",
+      "primary_limit": "None",
       "main_limitation": "Training Data Use",
       "api_access": true,
-      "data_privacy": "used_for_training",
+      "data_privacy": "Used for Training",
       "ranking_class": "limited_value",
       "notes": "Access to specific open-weights models for free. Low-friction API access. Data passed to free models is potentially used for further training, making it unsuitable for proprietary codebases.",
-      "source_ids": ["opencode-pricing"]
+      "source_ids": [
+        "opencode-pricing"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#11**",
+      "provider_plan": "**OpenCode Zen**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 12,
@@ -191,15 +458,68 @@
       "category": "free",
       "model_class": "Open Models",
       "models": [
-        { "name": "Limited Free Models", "tier": "open", "context_window": "varies" }
+        {
+          "name": "Limited Free Models",
+          "tier": "open",
+          "context_window": "varies"
+        }
       ],
-      "primary_limit": "model_gating",
+      "primary_limit": "Model Gating",
       "main_limitation": "Shared Hardware",
       "api_access": true,
-      "data_privacy": "varies",
+      "data_privacy": "Varies",
       "ranking_class": "poor_value",
       "notes": "Hosted versions of open models. No local GPU requirement. Only a small subset of models are free. Hardware allocation is shared and can lead to inconsistent response times.",
-      "source_ids": ["ollama-cloud"]
+      "source_ids": [
+        "ollama-cloud"
+      ],
+      "plan": "N/A",
+      "monthly_price_usd": 0,
+      "value_description": "",
+      "value_description_short": "",
+      "limit_type": "none",
+      "limit_description": "",
+      "limit_vulnerability": "",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#12**",
+      "provider_plan": "**Ollama Cloud**",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
+    }
+  ],
+  "description": "This analysis evaluates free tiers from major AI providers. If you're a developer working on a small project, experimenting with AI capabilities, learning prompt engineering, or prototyping an idea before committing to a paid plan, these options give you real access without spending a dollar. The trade-offs are real — but for hands-on exploration, they're more than enough.",
+  "scope_note": "Only providers with a genuinely free tier (no payment required) are included. Trials that require a credit card or paid subscription are excluded.",
+  "ranking_direction": "most generous free tier (Best) to most restrictive free access (Worst)",
+  "conclusion": "For a $0 budget, **Google AI Studio** gives you the most raw capability, while **MiMo Code** gives you the best hands-on coding experience with a frontier model (while the promo lasts). **DeepSeek** offers a genuinely frontier-level reasoning model for free with a massive context window. **Hugging Face** gives you the most variety to explore. Free tiers are ideal for learning and prototyping — just know that trade-offs (latency, rate limits, data privacy) make them impractical for production use.",
+  "summary_columns": [
+    {
+      "key": "rank_display",
+      "label": "Rank"
+    },
+    {
+      "key": "provider",
+      "label": "Provider"
+    },
+    {
+      "key": "model_class",
+      "label": "Top Free Model"
+    },
+    {
+      "key": "primary_limit",
+      "label": "Primary Limit"
+    },
+    {
+      "key": "limit_vulnerability",
+      "label": "Main Limitation"
+    },
+    {
+      "key": "data_privacy",
+      "label": "Data Privacy"
     }
   ]
 }

@@ -1,42 +1,55 @@
 # Templates
 
-This directory contains page templates for generating the `docs/content/*.md` pages from `data/*.json` data files.
+This directory contains the canonical page template for generating `docs/content/*.md` pages from `data/*.json` data files.
 
-## Template Files
+## Template File
 
-| Template | Data Source | Output Page |
-|:---|:---|:---|
-| `20-rankings.md.tmpl` | `data/20-rankings.json` | `docs/content/20-rankings.md` |
-| `10-rankings.md.tmpl` | `data/10-rankings.json` | `docs/content/10-rankings.md` |
-| `free-rankings.md.tmpl` | `data/free-rankings.json` | `docs/content/free-rankings.md` |
-| `api-pricing.md.tmpl` | `data/api-pricing.json` | `docs/content/api-pricing.md` |
+**`page.md.tmpl`** — The single template that ALL ranking and pricing pages follow.
 
-## Purpose
+This template defines the standardized structure:
+1. **Title** — from `title` field
+2. **Description** — from `description` field
+3. **Scope** — from `scope_note` field
+4. **Ranking direction** — from `ranking_direction` field
+5. **Entries** — ranked list with unified fields per entry
+6. **Summary table** — columns defined by `summary_columns` in the data file
+7. **Conclusion** — from `conclusion` field
 
-Templates define the **structure and format** of each page. They serve as the canonical reference for how data should be rendered into markdown. Currently, templates are documentation-first — pages are updated manually to match the data files, using these templates as the style guide.
+## Data Files
+
+| Data File | Page Type |
+|:---|:---|
+| `data/20-rankings.json` | $20 budget subscription rankings |
+| `data/10-rankings.json` | $10 budget subscription rankings |
+| `data/free-rankings.json` | Free tier rankings |
+| `data/api-pricing.json` | API pricing comparison |
 
 ## Workflow
 
 1. **Update data first** — edit `data/*.json` files (the single source of truth)
-2. **Reference the template** — ensure the page follows the template structure
+2. **Reference the template** — ensure the page follows `page.md.tmpl` structure
 3. **Update the page** — regenerate or manually update `docs/content/*.md` to match data
-4. **Validate** — run `scripts/update-data.sh --dry-run` to check consistency
+4. **Validate** — run `scripts/update-data.sh --check` to check consistency
 
 ## Template Syntax
 
-Templates use a Handlebars-inspired `{{placeholder}}` syntax for documentation purposes:
+Templates use a Handlebars-inspired `{{placeholder}}` syntax:
 
-- `{{provider}}` — provider name from data
-- `{{plan}}` — plan name from data  
-- `{{rank}}` — ranking position
-- `{{model_names}}` — comma-separated model names
-- `{{#each entries}}` — iterates over all entries in the data file
+- `{{title}}` — page title from data
+- `{{description}}` — page introduction
+- `{{scope_note}}` — scope callout
+- `{{ranking_direction}}` — ranking direction text
+- `{{#each entries}}` — iterates over all entries
+- `{{summary_columns}}` — defines table columns from data
+- `{{conclusion}}` — strategic takeaway
 
-These are **not executable templates** — they document the expected format. Actual page generation is done manually or via the `update-data.sh` script.
+These are **documentation-first templates** — they define the expected format. Actual page generation is done manually or via the `update-data.sh` script.
 
 ## Rules
 
+- **One template for all pages** — never create per-page templates
 - Data files (`data/*.json`) are the **single source of truth**
 - Pages must match data files exactly (ranks, prices, models, limits)
-- Templates define the canonical page structure
+- All entries use the same field names (empty string where not applicable)
+- Summary table columns are defined per-page via `summary_columns`
 - Never edit pricing data directly in markdown — update the data file first
