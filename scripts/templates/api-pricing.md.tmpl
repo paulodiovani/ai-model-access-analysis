@@ -1,0 +1,41 @@
+## **API Pricing Guide for Production AI Applications**
+
+This guide compares pay-as-you-go API pricing across AI model providers, focused on **production usage** — applications, services, and pipelines that call AI models programmatically at scale. What matters here is not just per-token cost, but **value incentives** — discounts, free credits, caching bonuses, and savings levers that reduce your effective spend.
+
+> **Scope:** Prices are per million tokens unless noted. All prices sourced from official provider pages as of {{last_updated}}. Prices may change — always verify against the provider's current pricing page.
+
+Here is the ranking from **most savings incentives (Best)** to **fewest savings levers (Worst)**.
+
+{{#each entries}}
+### **{{rank_emoji rank}} {{rank}}. {{provider}}**
+
+* **Models:** {{models_list}}
+* **Flagship Pricing (per M tokens):** {{pricing_detail}}
+* **Cached Input:** {{cached_detail}}
+* **Batch API:** {{batch_detail}}
+* **Free Tier:** {{free_tier}}
+* **Why it's \#{{rank}}:** {{notes}}
+* **Limitations:** {{limitations_list}}
+* **Source:** {{source_url}}
+
+{{/each}}
+
+---
+
+## **Summary: Value Incentives Comparison**
+
+| Rank | Provider | Best Discount | Free Credits/Tier | Batch |
+| :--- | :--- | :--- | :--- | :--- |
+{{#each entries}}
+| **\#{{rank}}** | **{{provider}}** | {{best_discount}} | {{free_credits_short}} | {{batch_short}} |
+{{/each}}
+
+> **Key insight:** The cheapest per-token price doesn't always mean the best value. Providers like Anthropic and OpenAI offer 90% caching discounts that make repeated prompts nearly as cheap as budget providers — with superior model quality. Always factor in your caching hit rate and batch eligibility when comparing.
+
+---
+
+💡 **The Strategic Approach:** {{conclusion}}
+
+---
+
+*Sources: All pricing data sourced from official provider pages in {{last_updated}}.*

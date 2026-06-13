@@ -98,12 +98,14 @@ When updating existing provider data:
 6. Regenerate charts and pages
 
 ### Ranking Classifications
-Entries are classified using the `ranking_class` field:
-- `exceptional_value` — Top tier, best ROI in category
-- `great_value` — Strong offering with minor trade-offs
-- `good_value` — Solid option, competitive
-- `moderate_value` — Average offering, some notable limitations
-- `limited_value` — Significant limitations or trade-offs
+Entries are classified using the `ranking_class` field. See [docs/content/ranking-classifications.md](docs/content/ranking-classifications.md) for full definitions of all data points, classifications, limit types, and model tiers.
+
+**Classification tiers:**
+- `exceptional_value` — Best in category, strong ROI
+- `great_value` — Strong with minor trade-offs
+- `good_value` — Solid, competitive
+- `moderate_value` — Average, notable limitations
+- `limited_value` — Significant limitations
 - `poor_value` — Bottom tier, major limitations
 
 ## 📁 Project Structure
@@ -131,6 +133,12 @@ Entries are classified using the `ranking_class` field:
 │   └── charts/                  # Generated chart images
 ├── scripts/
 │   └── update-data.sh           # Data update automation
+│   └── templates/               # Page templates for data-driven generation
+│       ├── README.md            # Template documentation
+│       ├── 20-rankings.md.tmpl  # $20 rankings template
+│       ├── 10-rankings.md.tmpl  # $10 rankings template
+│       ├── free-rankings.md.tmpl # Free rankings template
+│       └── api-pricing.md.tmpl  # API pricing template
 └── .github/
     ├── ISSUE_TEMPLATE/
     └── pull_request_template.md

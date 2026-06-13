@@ -1,0 +1,27 @@
+## **Free AI Model Access: A Developer's Guide**
+
+This analysis evaluates free tiers from major AI providers. If you're a developer working on a small project, experimenting with AI capabilities, learning prompt engineering, or prototyping an idea before committing to a paid plan, these options give you real access without spending a dollar. The trade-offs are real — but for hands-on exploration, they're more than enough.
+
+### **Free Tier Rankings (Best to Worst for Small Projects)**
+
+{{#each entries}}
+#### **{{rank_emoji rank}} {{rank}}. {{provider}} ({{top_model}})**
+*   **The Deal:** {{deal_description}}
+*   **What you get:** {{capabilities}}
+*   **Things to Consider:** **{{main_limitation}}.** {{limitation_details}}
+*   **Why it's \#{{rank}}:** {{notes}}
+*   **Verdict:** {{verdict}}
+
+{{/each}}
+
+---
+
+## **Summary Table: Free Tier Overview**
+
+| Rank | Provider | Top Free Model | Primary Limit | Main Limitation | Data Privacy |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+{{#each entries}}
+| **\#{{rank}}** | **{{provider}}** | {{top_model}} | {{primary_limit_label}} | **{{main_limitation}}** | {{data_privacy_label}} |
+{{/each}}
+
+💡 **The Bottom Line:** {{conclusion}}

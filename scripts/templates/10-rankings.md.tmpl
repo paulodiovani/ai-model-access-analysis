@@ -1,0 +1,30 @@
+## **Comparative Analysis of AI Model Access Providers (Normalized to a $${budget_threshold_usd} Budget)**
+
+This analysis evaluates subscription-based AI access plans within a tight $${budget_threshold_usd} monthly budget. Several providers offer entry-level subscriptions at this price point, and some deliver surprising value.
+
+> **Scope:** Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers are not listed here — see the [Free Rankings](#free-rankings.md) for those.
+
+Here is the definitive ranking from **best value for money (Best)** to **least capability per dollar (Worst)**.
+
+{{#each entries}}
+### **{{rank_emoji rank}} {{rank}}. {{provider}} ({{plan}})**
+
+* **The Model Class:** {{model_class}} (*{{model_names}}*)
+* **What your $${budget_threshold_usd} gets you:** {{budget_outcome}}
+* **Why it's \#{{rank}}:** {{notes}}
+
+{{/each}}
+
+## **Summary Comparison Table**
+
+| Rank | Provider / Plan | Model Tier | $${budget_threshold_usd} Budget Outcome | Limit Vulnerability |
+| :---- | :---- | :---- | :---- | :---- |
+{{#each entries}}
+| **\#{{rank}}** | **{{provider}}** | {{primary_model}} | **{{budget_outcome_short}}** | {{limit_vulnerability}} |
+{{/each}}
+
+💡 **The Strategic Takeaway:** {{conclusion}}
+
+---
+
+*Note: Many providers that appear in the [$20 Budget Analysis](#20-rankings.md) have subscriptions that exceed the $10 threshold. If your budget can stretch, those options open up significantly more possibilities.*
