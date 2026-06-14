@@ -4,7 +4,18 @@
   "title": "AI Cost Analysis Data Schema",
   "description": "Schema for structured AI provider cost analysis data files. Each ranking page has its own data file following this schema.",
   "type": "object",
-  "required": ["schema_version", "page", "title", "last_updated", "entries"],
+  "required": [
+    "schema_version",
+    "page",
+    "title",
+    "last_updated",
+    "description",
+    "scope_note",
+    "ranking_direction",
+    "conclusion",
+    "summary_columns",
+    "entries"
+  ],
   "properties": {
     "schema_version": {
       "type": "string",
@@ -28,12 +39,53 @@
       "items": {
         "$ref": "#/$defs/Entry"
       }
+    },
+    "description": {
+      "type": "string",
+      "description": "Page introduction paragraph"
+    },
+    "scope_note": {
+      "type": "string",
+      "description": "Scope callout text (what is included/excluded)"
+    },
+    "ranking_direction": {
+      "type": "string",
+      "description": "Description of ranking direction (e.g., \"best value (Best) to worst value (Worst)\")"
+    },
+    "conclusion": {
+      "type": "string",
+      "description": "Strategic takeaway / conclusion paragraph"
+    },
+    "summary_columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "label"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Entry field name to display"
+          },
+          "label": {
+            "type": "string",
+            "description": "Column header label"
+          }
+        }
+      },
+      "description": "Column definitions for the summary comparison table"
     }
   },
   "$defs": {
     "Entry": {
       "type": "object",
-      "required": ["rank", "provider", "category"],
+      "required": [
+        "rank",
+        "provider",
+        "category"
+      ],
       "properties": {
         "rank": {
           "type": "integer",
@@ -50,7 +102,11 @@
         },
         "category": {
           "type": "string",
-          "enum": ["subscription", "free", "api"],
+          "enum": [
+            "subscription",
+            "free",
+            "api"
+          ],
           "description": "Type of access model"
         },
         "monthly_price_usd": {
@@ -122,7 +178,11 @@
         },
         "data_privacy": {
           "type": "string",
-          "enum": ["used_for_training", "varies", "not_used"],
+          "enum": [
+            "used_for_training",
+            "varies",
+            "not_used"
+          ],
           "description": "Data privacy policy for free/submission tiers"
         },
         "pricing": {
@@ -139,12 +199,30 @@
             "type": "string"
           },
           "description": "References to source IDs in sources.json"
+        },
+        "value_description": {
+          "type": "string",
+          "description": "Unified value description (what you get for the price)"
+        },
+        "value_description_short": {
+          "type": "string",
+          "description": "Short version of value_description for summary table (max 80 chars)"
+        },
+        "limitations": {
+          "type": "string",
+          "description": "Limitations text (API pricing entries)"
+        },
+        "verdict": {
+          "type": "string",
+          "description": "Verdict text (free rankings entries)"
         }
       }
     },
     "ModelInfo": {
       "type": "object",
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
         "name": {
           "type": "string",
@@ -152,7 +230,13 @@
         },
         "tier": {
           "type": "string",
-          "enum": ["flagship", "mid", "fast", "free", "open"],
+          "enum": [
+            "flagship",
+            "mid",
+            "fast",
+            "free",
+            "open"
+          ],
           "description": "Model quality tier"
         },
         "context_window": {
@@ -208,10 +292,18 @@
     "ModelPricing": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
-        "input_per_m": { "type": "number" },
-        "output_per_m": { "type": "number" },
-        "cached_per_m": { "type": "number" }
+        "name": {
+          "type": "string"
+        },
+        "input_per_m": {
+          "type": "number"
+        },
+        "output_per_m": {
+          "type": "number"
+        },
+        "cached_per_m": {
+          "type": "number"
+        }
       }
     },
     "RankingClass": {

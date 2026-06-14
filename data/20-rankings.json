@@ -11,7 +11,7 @@
       "provider": "OpenCode Go",
       "plan": "Subscription",
       "category": "subscription",
-      "monthly_price_usd": 10.00,
+      "monthly_price_usd": 10.0,
       "model_class": "Open Flagships",
       "models": [
         {
@@ -30,24 +30,37 @@
           "context_window": "1M"
         }
       ],
-      "budget_outcome": "Best Value: Costs $10, yields $60 of token value.",
       "limit_type": "soft_value_cap",
       "limit_description": "$12 per 5 hours / $30 per week",
       "limit_vulnerability": "Soft value caps ($12/5hr).",
       "value_multiplier": 6.0,
-      "computational_value_usd": 60.00,
+      "computational_value_usd": 60.0,
       "ranking_class": "exceptional_value",
       "notes": "Uses a layered cap system that gives $60 of monthly computational value ($12 per 5 hours / $30 per week) for the $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models. The base $10 subscription is also the top pick in the $10 Budget Analysis — extra $10 acts as a buffer for heavier usage or optional credit top-ups.",
       "source_ids": [
         "opencode-pricing"
-      ]
+      ],
+      "value_description": "Best Value: Costs $10, yields $60 of token value.",
+      "value_description_short": "Best Value: Costs $10, yields $60 of token value.",
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#1**",
+      "provider_plan": "**OpenCode Go** (Subscription)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 2,
       "provider": "GPT Codex / OpenAI",
       "plan": "ChatGPT Plus",
       "category": "subscription",
-      "monthly_price_usd": 20.00,
+      "monthly_price_usd": 20.0,
       "model_class": "Proprietary Flagships",
       "models": [
         {
@@ -61,7 +74,6 @@
           "context_window": "128K"
         }
       ],
-      "budget_outcome": "Excellent: Heavily subsidized flat-rate volume.",
       "limit_type": "message_cap",
       "limit_description": "~160 messages per 3 hours",
       "limit_vulnerability": "Highly resilient (~160 msg/3hr).",
@@ -70,14 +82,30 @@
       "source_ids": [
         "openai-pricing",
         "openai-chatgpt-plans"
-      ]
+      ],
+      "value_description": "Excellent: Heavily subsidized flat-rate volume.",
+      "value_description_short": "Excellent: Heavily subsidized flat-rate volume.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#2**",
+      "provider_plan": "**GPT Codex / OpenAI** (ChatGPT Plus)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 3,
       "provider": "Z.ai / GLM",
       "plan": "Coding Plan Lite",
       "category": "subscription",
-      "monthly_price_usd": 18.00,
+      "monthly_price_usd": 18.0,
       "model_class": "Chinese Lab Flagships",
       "models": [
         {
@@ -86,7 +114,6 @@
           "context_window": "1M"
         }
       ],
-      "budget_outcome": "Great: Predictable, high-frequency agent access.",
       "limit_type": "rate_limit",
       "limit_description": "Unthrottled baseline; queue under sustained load",
       "limit_vulnerability": "Queue slowdowns under continuous load.",
@@ -95,14 +122,30 @@
       "source_ids": [
         "zai-coding-plan",
         "zhipu-pricing"
-      ]
+      ],
+      "value_description": "Great: Predictable, high-frequency agent access.",
+      "value_description_short": "Great: Predictable, high-frequency agent access.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#3**",
+      "provider_plan": "**Z.ai / GLM** (Coding Plan Lite)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 4,
       "provider": "Xiaomi MiMo",
       "plan": "Token Plan Standard",
       "category": "subscription",
-      "monthly_price_usd": 16.00,
+      "monthly_price_usd": 16.0,
       "model_class": "Open Flagships",
       "models": [
         {
@@ -112,7 +155,6 @@
           "params": "1T total, 42B active"
         }
       ],
-      "budget_outcome": "Strong: Flagship model + 1M context for $16.",
       "limit_type": "hard_credit_pool",
       "limit_description": "11B monthly credits covering full MiMo-V2.5 model family",
       "limit_vulnerability": "Credit pool burn rate under heavy load.",
@@ -120,7 +162,23 @@
       "notes": "The MiMo-V2.5 Pro is a genuine frontier model with a 1-million-token context window at a competitive price point. The credit-based system is straightforward. At $16 for a flagship-tier model, the value proposition is strong.",
       "source_ids": [
         "mimo-pricing"
-      ]
+      ],
+      "value_description": "Strong: Flagship model + 1M context for $16.",
+      "value_description_short": "Strong: Flagship model + 1M context for $16.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#4**",
+      "provider_plan": "**Xiaomi MiMo** (Token Plan Standard)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 5,
@@ -141,7 +199,6 @@
           "context_window": "1M"
         }
       ],
-      "budget_outcome": "Moderate: Large context but compute-metered.",
       "limit_type": "compute_allocation",
       "limit_description": "Rolling 5-hour compute-based allocation",
       "limit_vulnerability": "Drains fast via Antigravity CLI loops.",
@@ -150,14 +207,30 @@
       "source_ids": [
         "google-ai-pricing",
         "google-one-ai"
-      ]
+      ],
+      "value_description": "Moderate: Large context but compute-metered.",
+      "value_description_short": "Moderate: Large context but compute-metered.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#5**",
+      "provider_plan": "**Google Gemini / Antigravity** (Google AI Pro)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 6,
       "provider": "Claude AI",
       "plan": "Claude Pro",
       "category": "subscription",
-      "monthly_price_usd": 20.00,
+      "monthly_price_usd": 20.0,
       "model_class": "Proprietary Flagships",
       "models": [
         {
@@ -171,7 +244,6 @@
           "context_window": "200K"
         }
       ],
-      "budget_outcome": "Poor: Extremely aggressive rate-limiting.",
       "limit_type": "compute_allocation",
       "limit_description": "Strict compute caps; 5-hour lockout window",
       "limit_vulnerability": "Hard lockout wall (often <15 deep prompts).",
@@ -179,7 +251,23 @@
       "notes": "Anthropic applies strict compute caps to Opus 4.7 on the Pro tier to push heavy users toward their $100/month Claude Max tier. If you feed Claude Pro a large project workspace, you can trigger a 5-hour lockout window in as few as 10 to 15 prompts.",
       "source_ids": [
         "anthropic-pricing"
-      ]
+      ],
+      "value_description": "Poor: Extremely aggressive rate-limiting.",
+      "value_description_short": "Poor: Extremely aggressive rate-limiting.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#6**",
+      "provider_plan": "**Claude AI** (Claude Pro)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 7,
@@ -195,7 +283,6 @@
           "context_window": "1M"
         }
       ],
-      "budget_outcome": "Poor: Rigid, unyielding monthly credit allowance.",
       "limit_type": "hard_credit_pool",
       "limit_description": "1,000-credit monthly pool",
       "limit_vulnerability": "Flat 1,000 credit hard stop.",
@@ -203,14 +290,30 @@
       "notes": "It relies on a rigid 1,000-credit monthly pool. When those credits are exhausted by heavy generation workloads, the tier stops dead until the next billing cycle.",
       "source_ids": [
         "minimax-pricing"
-      ]
+      ],
+      "value_description": "Poor: Rigid, unyielding monthly credit allowance.",
+      "value_description_short": "Poor: Rigid, unyielding monthly credit allowance.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#7**",
+      "provider_plan": "**Minimax** (Hailuo AI Standard)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
     },
     {
       "rank": 8,
       "provider": "Grok",
       "plan": "SuperGrok Lite",
       "category": "subscription",
-      "monthly_price_usd": 10.00,
+      "monthly_price_usd": 10.0,
       "model_class": "Social & Search Flagships",
       "models": [
         {
@@ -219,7 +322,6 @@
           "context_window": "128K"
         }
       ],
-      "budget_outcome": "Worst: True flagship models locked out entirely.",
       "limit_type": "model_gating",
       "limit_description": "Basic capabilities only; flagship reasoning requires $30/mo",
       "limit_vulnerability": "Requires a tier upgrade to $30/mo.",
@@ -228,7 +330,49 @@
       "source_ids": [
         "xai-pricing",
         "xai-grok-plans"
-      ]
+      ],
+      "value_description": "Worst: True flagship models locked out entirely.",
+      "value_description_short": "Worst: True flagship models locked out entirely.",
+      "value_multiplier": null,
+      "computational_value_usd": null,
+      "primary_limit": "",
+      "main_limitation": "",
+      "api_access": null,
+      "data_privacy": "",
+      "pricing": null,
+      "limitations": "",
+      "verdict": "",
+      "rank_display": "**\\#8**",
+      "provider_plan": "**Grok** (SuperGrok Lite)",
+      "best_discount": "—",
+      "free_credits_short": "—",
+      "batch_short": "—"
+    }
+  ],
+  "description": "This analysis evaluates subscription-based AI access plans within a $20 monthly budget, focusing on the volume of flagship-tier reasoning tokens available and the resilience of rate limits when used for high-velocity agentic workflows.",
+  "scope_note": "Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers (e.g., DeepSeek, OpenCode Zen) are not listed here — see the [Free Rankings](free-rankings.md) for those.",
+  "ranking_direction": "most raw flagship usage volume (Best) to fastest capacity depletion/lockout (Worst)",
+  "conclusion": "If you want the absolute highest volume of elite reasoning tokens for a twenty-dollar budget, buy the **OpenCode Go subscription** for top-tier open models, or buy **ChatGPT Plus** for proprietary ones.",
+  "summary_columns": [
+    {
+      "key": "rank_display",
+      "label": "Rank"
+    },
+    {
+      "key": "provider_plan",
+      "label": "Provider / Plan"
+    },
+    {
+      "key": "model_class",
+      "label": "Model Tier"
+    },
+    {
+      "key": "value_description_short",
+      "label": "$20 Budget Outcome"
+    },
+    {
+      "key": "limit_vulnerability",
+      "label": "Limit Vulnerability"
     }
   ]
 }

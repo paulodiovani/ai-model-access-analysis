@@ -22,11 +22,31 @@ All data files MUST validate against `schema.json`. The schema defines the struc
 ```
 sources.json (verification URLs)
        ↓
-data/*.json (structured data)
+data/*.json (structured data + page-level text)
        ↓
-docs/content/*.md (rendered pages)
-docs/charts/*.png (gnuplot charts)
+docs/content/*.md (rendered pages, following page.md.tmpl)
 ```
+
+## Page-Level Fields
+
+Each data file includes fields that define the page structure:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `title` | string | Page title |
+| `description` | string | Introduction paragraph |
+| `scope_note` | string | Scope callout (what's included/excluded) |
+| `ranking_direction` | string | Ranking direction description |
+| `conclusion` | string | Strategic takeaway paragraph |
+| `summary_columns` | array | Column definitions for the summary table (`{key, label}`) |
+
+## Entry Fields
+
+All entries use unified field names across ALL data files. See `schema.json` for the full definition.
+
+**Core fields:** `rank`, `provider`, `plan`, `category`, `model_class`, `models`, `value_description`, `limit_description`, `limit_vulnerability`, `notes`, `ranking_class`, `source_ids`
+
+**Optional fields (null/empty when not applicable):** `monthly_price_usd`, `value_multiplier`, `computational_value_usd`, `primary_limit`, `main_limitation`, `api_access`, `data_privacy`, `pricing`, `limitations`, `verdict`
 
 ## Rules
 

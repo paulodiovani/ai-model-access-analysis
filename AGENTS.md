@@ -66,7 +66,7 @@ All pricing, rankings, and analysis data lives in structured JSON files under `d
 
 **When updating information:**
 1. Update the data file (`data/*.json`) FIRST
-2. Then regenerate the markdown pages and charts
+2. Then regenerate the markdown pages
 3. Never edit pricing or ranking data directly in markdown
 
 ### Schema Compliance
@@ -95,15 +95,29 @@ When updating existing provider data:
 3. Update the data file with any changes
 4. Update `last_verified` dates in both `data/sources.json` and the entry
 5. If prices changed, re-evaluate rankings (ranks may shift)
-6. Regenerate charts and pages
+6. Regenerate pages
+
+### Unified Entry Fields
+All entries across ALL data files use the same field names. When a field doesn't apply to a page type, use an empty string (`""`) or `null`. Never omit fields.
+
+**Core fields (all entries):** `rank`, `provider`, `plan`, `category`, `model_class`, `models`, `value_description`, `limit_description`, `limit_vulnerability`, `notes`, `ranking_class`, `source_ids`
+
+**Derived fields (auto-generated):** `rank_display`, `provider_plan`, `value_description_short` — these are computed from core fields for the summary table.
+
+**Optional fields (use null/empty when not applicable):** `monthly_price_usd`, `value_multiplier`, `computational_value_usd`, `primary_limit`, `main_limitation`, `api_access`, `data_privacy`, `pricing`, `limitations`, `verdict`
+
+### Single Template Rule
+ALL pages follow `scripts/templates/page.md.tmpl`. Never create per-page templates. The template has no conditional sections — every page uses the same structure.
 
 ### Ranking Classifications
-Entries are classified using the `ranking_class` field:
-- `exceptional_value` — Top tier, best ROI in category
-- `great_value` — Strong offering with minor trade-offs
-- `good_value` — Solid option, competitive
-- `moderate_value` — Average offering, some notable limitations
-- `limited_value` — Significant limitations or trade-offs
+Entries are classified using the `ranking_class` field.
+
+**Classification tiers:**
+- `exceptional_value` — Best in category, strong ROI
+- `great_value` — Strong with minor trade-offs
+- `good_value` — Solid, competitive
+- `moderate_value` — Average, notable limitations
+- `limited_value` — Significant limitations
 - `poor_value` — Bottom tier, major limitations
 
 ## 📁 Project Structure
@@ -128,9 +142,11 @@ Entries are classified using the `ranking_class` field:
 │   │   ├── free-rankings.md     # Free tier analysis
 │   │   ├── api-pricing.md       # API pricing guide
 │   │   └── about.md             # About the project
-│   └── charts/                  # Generated chart images
 ├── scripts/
-│   └── update-data.sh           # Data update automation
+│   ├── update-data.sh           # Data update automation
+│   └── templates/               # Page templates
+│       ├── README.md            # Template documentation
+│       └── page.md.tmpl         # Single canonical template for all pages
 └── .github/
     ├── ISSUE_TEMPLATE/
     └── pull_request_template.md

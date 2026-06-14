@@ -1,0 +1,33 @@
+## **{{title}}**
+
+{{description}}
+
+> **Scope:** {{scope_note}}
+
+Here is the ranking from **{{ranking_direction}}**.
+
+{{#each entries}}
+### **{{rank_emoji rank}} {{rank}}. {{provider}} ({{plan}})**
+
+* **The Model Class:** {{model_class}} (*{{models_list}}*)
+* **What you get:** {{value_description}}
+* **Limits:** {{limit_description}}
+* **Limit Vulnerability:** {{limit_vulnerability}}
+* **Why it's \#{{rank}}:** {{notes}}
+
+{{/each}}
+
+---
+
+## **Summary Comparison Table**
+
+| {{#each summary_columns}}{{label}}{{#unless @last}} | {{/unless}}{{/each}} |
+|{{#each summary_columns}} :---{{#unless @last}} |{{/unless}}{{/each}} |
+{{#each entries}}| {{#each ../summary_columns}}{{lookup .. key}}{{#unless @last}} | {{/unless}}{{/each}} |
+{{/each}}
+
+💡 **The Strategic Takeaway:** {{conclusion}}
+
+---
+
+*Sources: All data sourced from official provider pages as of {{last_updated}}. Prices may change — always verify against the provider's current pricing page.*
