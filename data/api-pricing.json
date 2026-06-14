@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "page": "api-pricing",
   "title": "API Pricing Guide for Production AI Applications",
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-14",
   "scope": "api",
   "entries": [
     {
@@ -44,11 +44,11 @@
         ]
       },
       "ranking_class": "exceptional_value",
-      "notes": "The most extreme caching discount in the industry — 99% off cached input makes repeated prompts nearly free. V4-Pro competes with GPT-5.4 and Claude Sonnet on reasoning benchmarks. Cache hits at $0.003/M are unmatched.",
+      "notes": "The most extreme caching discount in the industry \u2014 99% off cached input makes repeated prompts nearly free. V4-Pro competes with GPT-5.4 and Claude Sonnet on reasoning benchmarks. Cache hits at $0.003/M are unmatched.",
       "limitations": [
         "Only two models",
         "No built-in tooling/guardrails/enterprise features",
-        "Based in China — data sovereignty concern",
+        "Based in China \u2014 data sovereignty concern",
         "API only (no managed platform)"
       ],
       "source_ids": [
@@ -126,7 +126,7 @@
         ]
       },
       "ranking_class": "exceptional_value",
-      "notes": "Triple incentive — 80% caching discount, 50% batch discount, AND a free unlimited model. The free tier alone (GLM-4.7-Flash) can handle serious workloads.",
+      "notes": "Triple incentive \u2014 80% caching discount, 50% batch discount, AND a free unlimited model. The free tier alone (GLM-4.7-Flash) can handle serious workloads.",
       "limitations": [
         "Prices in CNY",
         "Platform primarily Chinese-language",
@@ -213,7 +213,7 @@
         ]
       },
       "ranking_class": "great_value",
-      "notes": "Stacked incentives — 90% caching discount on Flash, 50% batch discount, generous free tier, and open-source Gemma 4. Media generation models (Imagen, Veo, Lyria) included.",
+      "notes": "Stacked incentives \u2014 90% caching discount on Flash, 50% batch discount, generous free tier, and open-source Gemma 4. Media generation models (Imagen, Veo, Lyria) included.",
       "limitations": [
         "Free-tier data used for model improvement",
         "Prices double above 200K context on Pro models",
@@ -351,7 +351,7 @@
         ]
       },
       "ranking_class": "good_value",
-      "notes": "90% cached input discount brings GPT-5.4 to $0.25/M input — competitive with cheap models for repeated prompts. Most polished API ecosystem with best tool calling and structured output.",
+      "notes": "90% cached input discount brings GPT-5.4 to $0.25/M input \u2014 competitive with cheap models for repeated prompts. Most polished API ecosystem with best tool calling and structured output.",
       "limitations": [
         "Most expensive per-token pricing",
         "GPT-5.5 at $30/M output is prohibitive for high-volume use",
@@ -420,7 +420,7 @@
       "ranking_class": "good_value",
       "notes": "85% caching discount plus 50% promo pricing on M3. 1M context window. Native multimodal (text, image, video, audio).",
       "limitations": [
-        "Prices in CNY — international billing may vary",
+        "Prices in CNY \u2014 international billing may vary",
         "M3 promo pricing may not be permanent",
         "Limited international ecosystem"
       ],
@@ -629,7 +629,7 @@
       "notes": "Zero markup means you get provider-level pricing without the middleman. Volume discounts available. 4 free models with no limits. Single API key for every major provider.",
       "limitations": [
         "$20 minimum top-up",
-        "Not a model provider — passes through underlying pricing",
+        "Not a model provider \u2014 passes through underlying pricing",
         "No batch API"
       ],
       "source_ids": [
@@ -669,7 +669,7 @@
       "pricing": {
         "flagship_input_per_m": 1.74,
         "flagship_output_per_m": 3.48,
-        "cached_input_discount": "50%",
+        "cached_input_discount": "90%",
         "cached_input_price_per_m": null,
         "batch_discount": "50%",
         "free_tier": "$1 in free credits on signup",
@@ -692,7 +692,7 @@
         ]
       },
       "ranking_class": "moderate_value",
-      "notes": "50% off both caching AND batch by default. Two-tier serving (Standard and Priority) lets you trade latency for cost.",
+      "notes": "~90% caching discount plus 50% batch discount by default. Two-tier serving (Standard and Priority) lets you trade latency for cost.",
       "limitations": [
         "Markup over direct provider pricing",
         "Standard tier has variable latency"
@@ -716,7 +716,7 @@
       "verdict": "",
       "rank_display": "**\\#10**",
       "provider_plan": "**Fireworks AI**",
-      "best_discount": "50%",
+      "best_discount": "90%",
       "free_credits_short": "$1 in free credits on signup",
       "batch_short": "50%"
     },
@@ -757,7 +757,7 @@
         ]
       },
       "ranking_class": "moderate_value",
-      "notes": "Multiple pricing tiers that stack — Standard/Flex/Batch/Reserved. 50% batch discount. Enterprise features (Guardrails, Knowledge Bases, prompt routing).",
+      "notes": "Multiple pricing tiers that stack \u2014 Standard/Flex/Batch/Reserved. 50% batch discount. Enterprise features (Guardrails, Knowledge Bases, prompt routing).",
       "limitations": [
         "Highest markup of any infrastructure provider",
         "Complex pricing structure",
@@ -804,7 +804,7 @@
         "cached_input_price_per_m": null,
         "batch_discount": null,
         "free_tier": "25+ free models (50 requests/day)",
-        "platform_fee": "5.5% (eliminated with BYOK — 1M free requests/month)"
+        "platform_fee": "5.5% (eliminated with BYOK \u2014 1M free requests/month)"
       },
       "ranking_class": "moderate_value",
       "notes": "25+ free models and BYOK eliminates the platform fee entirely. Auto-routing picks the cheapest/fastest provider. No minimum spend.",
@@ -876,7 +876,7 @@
       "notes": "Frontier-class model at extremely competitive prices. MiMo-V2.5 at ~$0.28/M blended rivals models costing 10x more. Available through Alibaba Cloud Bailian.",
       "limitations": [
         "No caching or batch incentives documented",
-        "No direct API — available only through Alibaba Cloud or third-party routers",
+        "No direct API \u2014 available only through Alibaba Cloud or third-party routers",
         "Newer platform with smaller ecosystem"
       ],
       "source_ids": [
@@ -1025,7 +1025,7 @@
         ]
       },
       "ranking_class": "limited_value",
-      "notes": "Every model is open-weight — self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
+      "notes": "Every model is open-weight \u2014 self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
       "limitations": [
         "No caching or batch discounts",
         "Fewest savings levers of any provider",
@@ -1055,10 +1055,10 @@
       "batch_short": null
     }
   ],
-  "description": "This guide compares pay-as-you-go API pricing across AI model providers, focused on **production usage** — applications, services, and pipelines that call AI models programmatically at scale. What matters here is not just per-token cost, but **value incentives** — discounts, free credits, caching bonuses, and savings levers that reduce your effective spend.",
-  "scope_note": "Prices are per million tokens unless noted. All prices sourced from official provider pages. Prices may change — always verify against the provider's current pricing page.",
+  "description": "This guide compares pay-as-you-go API pricing across AI model providers, focused on **production usage** \u2014 applications, services, and pipelines that call AI models programmatically at scale. What matters here is not just per-token cost, but **value incentives** \u2014 discounts, free credits, caching bonuses, and savings levers that reduce your effective spend.",
+  "scope_note": "Prices are per million tokens unless noted. All prices sourced from official provider pages. Prices may change \u2014 always verify against the provider's current pricing page.",
   "ranking_direction": "most savings incentives (Best) to fewest savings levers (Worst)",
-  "conclusion": "Most production apps should **cache aggressively** — a 90% cache discount on Claude or GPT can be cheaper than a budget model without caching. Batch eligible workloads for 50% off. Use free tiers for experimentation. Route simple tasks to cheap models and escalate complex reasoning to frontier models only when needed. The best provider is the one whose incentives match your usage pattern.",
+  "conclusion": "Most production apps should **cache aggressively** \u2014 a 90% cache discount on Claude or GPT can be cheaper than a budget model without caching. Batch eligible workloads for 50% off. Use free tiers for experimentation. Route simple tasks to cheap models and escalate complex reasoning to frontier models only when needed. The best provider is the one whose incentives match your usage pattern.",
   "summary_columns": [
     {
       "key": "rank_display",

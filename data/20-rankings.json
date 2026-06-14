@@ -3,7 +3,7 @@
   "page": "20-rankings",
   "title": "Comparative Analysis of AI Model Access Providers (Normalized to a $20 Budget)",
   "budget_threshold_usd": 20,
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-14",
   "scope": "subscription",
   "entries": [
     {
@@ -12,21 +12,71 @@
       "plan": "Subscription",
       "category": "subscription",
       "monthly_price_usd": 10.0,
-      "model_class": "Open Flagships",
+      "model_class": "Open & Proprietary Flagships",
       "models": [
+        {
+          "name": "GLM-5.1",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "GLM-5",
+          "tier": "flagship",
+          "context_window": "128K"
+        },
+        {
+          "name": "Kimi K2.7 Code",
+          "tier": "flagship",
+          "context_window": "256K"
+        },
+        {
+          "name": "Kimi K2.6",
+          "tier": "flagship",
+          "context_window": "256K"
+        },
+        {
+          "name": "MiMo-V2.5-Pro",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiMo-V2.5",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiniMax M3",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiniMax M2.7",
+          "tier": "mid",
+          "context_window": "1M"
+        },
         {
           "name": "Qwen 3.7 Max",
           "tier": "flagship",
           "context_window": "1M"
         },
         {
-          "name": "GLM 5.1",
+          "name": "Qwen 3.7 Plus",
+          "tier": "mid",
+          "context_window": "128K"
+        },
+        {
+          "name": "Qwen 3.6 Plus",
+          "tier": "mid",
+          "context_window": "128K"
+        },
+        {
+          "name": "DeepSeek V4 Pro",
           "tier": "flagship",
           "context_window": "1M"
         },
         {
-          "name": "MiMo V2.5 Pro",
-          "tier": "flagship",
+          "name": "DeepSeek V4 Flash",
+          "tier": "fast",
           "context_window": "1M"
         }
       ],
@@ -36,7 +86,7 @@
       "value_multiplier": 6.0,
       "computational_value_usd": 60.0,
       "ranking_class": "exceptional_value",
-      "notes": "Uses a layered cap system that gives $60 of monthly computational value ($12 per 5 hours / $30 per week) for the $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models. The base $10 subscription is also the top pick in the $10 Budget Analysis — extra $10 acts as a buffer for heavier usage or optional credit top-ups.",
+      "notes": "Uses a layered cap system that gives $60 of monthly computational value ($12 per 5 hours / $30 per week) for the $10 entry fee. Because it grants a 6x value multiplier on wholesale API costs, you can push massive context sizes through elite models across 13 options including GLM-5.1, Kimi K2.7, MiMo-V2.5-Pro, Qwen 3.7 Max, DeepSeek V4 Pro, and more. The base $10 subscription is also the top pick in the $10 Budget Analysis \u2014 extra $10 acts as a buffer for heavier usage or optional credit top-ups.",
       "source_ids": [
         "opencode-pricing"
       ],
@@ -51,9 +101,9 @@
       "verdict": "",
       "rank_display": "**\\#1**",
       "provider_plan": "**OpenCode Go** (Subscription)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 2,
@@ -96,9 +146,9 @@
       "verdict": "",
       "rank_display": "**\\#2**",
       "provider_plan": "**GPT Codex / OpenAI** (ChatGPT Plus)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 3,
@@ -136,9 +186,9 @@
       "verdict": "",
       "rank_display": "**\\#3**",
       "provider_plan": "**Z.ai / GLM** (Coding Plan Lite)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 4,
@@ -176,9 +226,9 @@
       "verdict": "",
       "rank_display": "**\\#4**",
       "provider_plan": "**Xiaomi MiMo** (Token Plan Standard)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 5,
@@ -221,9 +271,9 @@
       "verdict": "",
       "rank_display": "**\\#5**",
       "provider_plan": "**Google Gemini / Antigravity** (Google AI Pro)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 6,
@@ -265,9 +315,9 @@
       "verdict": "",
       "rank_display": "**\\#6**",
       "provider_plan": "**Claude AI** (Claude Pro)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 7,
@@ -304,9 +354,9 @@
       "verdict": "",
       "rank_display": "**\\#7**",
       "provider_plan": "**Minimax** (Hailuo AI Standard)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 8,
@@ -344,13 +394,13 @@
       "verdict": "",
       "rank_display": "**\\#8**",
       "provider_plan": "**Grok** (SuperGrok Lite)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     }
   ],
   "description": "This analysis evaluates subscription-based AI access plans within a $20 monthly budget, focusing on the volume of flagship-tier reasoning tokens available and the resilience of rate limits when used for high-velocity agentic workflows.",
-  "scope_note": "Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers (e.g., DeepSeek, OpenCode Zen) are not listed here — see the [Free Rankings](free-rankings.md) for those.",
+  "scope_note": "Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers (e.g., DeepSeek, OpenCode Zen) are not listed here \u2014 see the [Free Rankings](free-rankings.md) for those.",
   "ranking_direction": "most raw flagship usage volume (Best) to fastest capacity depletion/lockout (Worst)",
   "conclusion": "If you want the absolute highest volume of elite reasoning tokens for a twenty-dollar budget, buy the **OpenCode Go subscription** for top-tier open models, or buy **ChatGPT Plus** for proprietary ones.",
   "summary_columns": [

@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-14",
   "description": "Centralized registry of data sources for AI provider pricing and limits. Every provider entry in the ranking data files MUST reference a source_id defined here.",
   "sources": [
     {
       "id": "opencode-pricing",
       "provider": "OpenCode",
-      "url": "https://opencode.ai/zen",
+      "url": "https://opencode.ai/go",
       "type": "pricing_page",
-      "description": "OpenCode Zen pricing and subscription plans",
-      "last_verified": "2026-06-13",
+      "description": "OpenCode Go subscription ($10/mo) and Zen pay-as-you-go pricing",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -18,7 +18,7 @@
       "url": "https://developers.openai.com/api/docs/pricing",
       "type": "pricing_page",
       "description": "OpenAI API pricing (GPT-5.x series)",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -27,7 +27,7 @@
       "url": "https://openai.com/chatgpt/pricing",
       "type": "subscription_page",
       "description": "ChatGPT subscription plans (Free, Go, Plus, Pro)",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://www.anthropic.com/pricing",
       "type": "pricing_page",
       "description": "Claude API and subscription pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
       "type": "pricing_page",
       "description": "Google AI (Gemini) API pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://one.google.com/about/ai-premium",
       "type": "subscription_page",
       "description": "Google One AI Premium subscription plan",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://api-docs.deepseek.com/quick_start/pricing",
       "type": "pricing_page",
       "description": "DeepSeek API pricing (V4 series)",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://chat.deepseek.com",
       "type": "product_page",
       "description": "DeepSeek free chat interface",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://open.bigmodel.cn/pricing",
       "type": "pricing_page",
       "description": "GLM API pricing (Z.ai / Zhipu AI)",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://open.bigmodel.cn/pricing",
       "type": "subscription_page",
       "description": "Z.ai / Zhipu AI API and consumer pricing. GLM model pricing including coding plans. In Chinese.",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://platform.minimaxi.com/docs/pricing/overview",
       "type": "pricing_page",
       "description": "MiniMax API pricing (M3, M2.7, speech, video, image models). In Chinese.",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://docs.x.ai/developers/pricing",
       "type": "pricing_page",
       "description": "xAI (Grok) API pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -116,8 +116,8 @@
       "provider": "xAI",
       "url": "https://grok.com/pricing",
       "type": "subscription_page",
-      "description": "Grok subscription plans (Free, SuperGrok). JS-rendered — requires browser to view. API pricing at docs.x.ai.",
-      "last_verified": "2026-06-13",
+      "description": "Grok subscription plans (Free, SuperGrok). JS-rendered \u2014 requires browser to view. API pricing at docs.x.ai.",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -125,8 +125,8 @@
       "provider": "Qwen / Alibaba Cloud",
       "url": "https://help.aliyun.com/zh/model-studio/getting-started/models",
       "type": "pricing_page",
-      "description": "Qwen model catalog via Alibaba Cloud Model Studio — links to per-model pricing. In Chinese.",
-      "last_verified": "2026-06-13",
+      "description": "Qwen model catalog via Alibaba Cloud Model Studio \u2014 links to per-model pricing. In Chinese.",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://chat.qwen.ai",
       "type": "product_page",
       "description": "Qwen consumer chat web app (free access to Qwen models). JS-rendered.",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://fireworks.ai/pricing",
       "type": "pricing_page",
       "description": "Fireworks AI inference pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -153,7 +153,7 @@
       "url": "https://aws.amazon.com/bedrock/pricing/",
       "type": "pricing_page",
       "description": "Amazon Bedrock pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://openrouter.ai/pricing",
       "type": "pricing_page",
       "description": "OpenRouter pricing and free models",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -171,7 +171,7 @@
       "url": "https://mimo.xiaomi.com",
       "type": "pricing_page",
       "description": "MiMo pricing via Alibaba Cloud Bailian",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -179,8 +179,8 @@
       "provider": "Xiaomi MiMo",
       "url": "https://github.com/MiMo-Code",
       "type": "product_page",
-      "description": "MiMo Code — terminal-native AI coding agent by Xiaomi. Free during promotional period.",
-      "last_verified": "2026-06-13",
+      "description": "MiMo Code \u2014 terminal-native AI coding agent by Xiaomi. Free during promotional period.",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -189,7 +189,7 @@
       "url": "https://www.together.ai/pricing",
       "type": "pricing_page",
       "description": "Together AI inference and fine-tuning pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -198,7 +198,7 @@
       "url": "https://mistral.ai/pricing",
       "type": "pricing_page",
       "description": "Mistral API pricing",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -207,7 +207,7 @@
       "url": "https://huggingface.co/docs/api-inference/index",
       "type": "documentation",
       "description": "Hugging Face Inference API documentation",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -216,7 +216,7 @@
       "url": "https://kimi.ai",
       "type": "product_page",
       "description": "Kimi consumer chat interface",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     },
     {
@@ -225,7 +225,7 @@
       "url": "https://ollama.com",
       "type": "product_page",
       "description": "Ollama Cloud hosted models",
-      "last_verified": "2026-06-13",
+      "last_verified": "2026-06-14",
       "reliability": "primary"
     }
   ]
