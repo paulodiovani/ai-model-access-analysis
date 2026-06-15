@@ -3,7 +3,7 @@
   "page": "10-rankings",
   "title": "Comparative Analysis of AI Model Access Providers (Normalized to a $10 Budget)",
   "budget_threshold_usd": 10,
-  "last_updated": "2026-06-13",
+  "last_updated": "2026-06-14",
   "scope": "subscription",
   "entries": [
     {
@@ -12,21 +12,71 @@
       "plan": "Subscription",
       "category": "subscription",
       "monthly_price_usd": 10.0,
-      "model_class": "Open Flagships",
+      "model_class": "Open & Proprietary Flagships",
       "models": [
+        {
+          "name": "GLM-5.1",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "GLM-5",
+          "tier": "flagship",
+          "context_window": "128K"
+        },
+        {
+          "name": "Kimi K2.7 Code",
+          "tier": "flagship",
+          "context_window": "256K"
+        },
+        {
+          "name": "Kimi K2.6",
+          "tier": "flagship",
+          "context_window": "256K"
+        },
+        {
+          "name": "MiMo-V2.5-Pro",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiMo-V2.5",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiniMax M3",
+          "tier": "flagship",
+          "context_window": "1M"
+        },
+        {
+          "name": "MiniMax M2.7",
+          "tier": "mid",
+          "context_window": "1M"
+        },
         {
           "name": "Qwen 3.7 Max",
           "tier": "flagship",
           "context_window": "1M"
         },
         {
-          "name": "GLM 5.1",
+          "name": "Qwen 3.7 Plus",
+          "tier": "mid",
+          "context_window": "128K"
+        },
+        {
+          "name": "Qwen 3.6 Plus",
+          "tier": "mid",
+          "context_window": "128K"
+        },
+        {
+          "name": "DeepSeek V4 Pro",
           "tier": "flagship",
           "context_window": "1M"
         },
         {
-          "name": "MiMo V2.5 Pro",
-          "tier": "flagship",
+          "name": "DeepSeek V4 Flash",
+          "tier": "fast",
           "context_window": "1M"
         }
       ],
@@ -36,7 +86,7 @@
       "value_multiplier": 6.0,
       "computational_value_usd": 60.0,
       "ranking_class": "exceptional_value",
-      "notes": "The same 6x value multiplier that makes OpenCode Go the top pick at $20 works just as well at $10. You get $60 of monthly computational value ($12 per 5 hours / $30 per week) across flagship open models like Qwen 3.7 Max and GLM 5.1. No other provider comes close to this kind of return on a ten-dollar bill.",
+      "notes": "The same 6x value multiplier that makes OpenCode Go the top pick at $20 works just as well at $10. You get $60 of monthly computational value ($12 per 5 hours / $30 per week) across flagship open models like GLM-5.1, Kimi K2.7, MiMo-V2.5-Pro, Qwen 3.7 Max, DeepSeek V4 Pro, and more. No other provider comes close to this kind of return on a ten-dollar bill.",
       "source_ids": [
         "opencode-pricing"
       ],
@@ -51,9 +101,9 @@
       "verdict": "",
       "rank_display": "**\\#1**",
       "provider_plan": "**OpenCode Go** (Subscription)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 2,
@@ -91,9 +141,9 @@
       "verdict": "",
       "rank_display": "**\\#2**",
       "provider_plan": "**Xiaomi MiMo** (Token Plan Lite)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 3,
@@ -113,7 +163,7 @@
       "limit_description": "~100 messages per 5 hours",
       "limit_vulnerability": "Ads included; not full flagship model.",
       "ranking_class": "good_value",
-      "notes": "For $8, you get roughly 10x the free tier — approximately 100 messages with GPT-5.2 Instant per 5-hour window, plus file uploads, image generation, and an expanded context window. GPT-5.2 Instant is fast and capable for everyday tasks. The catch: OpenAI is rolling out ads in the Go tier.",
+      "notes": "For $8, you get roughly 10x the free tier \u2014 approximately 100 messages with GPT-5.2 Instant per 5-hour window, plus file uploads, image generation, and an expanded context window. GPT-5.2 Instant is fast and capable for everyday tasks. The catch: OpenAI is rolling out ads in the Go tier.",
       "source_ids": [
         "openai-chatgpt-plans"
       ],
@@ -130,9 +180,9 @@
       "verdict": "",
       "rank_display": "**\\#3**",
       "provider_plan": "**OpenAI** (ChatGPT Go)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     },
     {
       "rank": 4,
@@ -152,7 +202,7 @@
       "limit_description": "Basic capabilities only; flagship reasoning requires $30/mo",
       "limit_vulnerability": "Flagship reasoning locked behind $30/mo tier.",
       "ranking_class": "limited_value",
-      "notes": "The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions — but it lacks deep reasoning and coding capabilities.",
+      "notes": "The Lite tier gives you Grok's speed and personality, but limits you to basic capabilities. The actual flagship reasoning engine (Grok 4.3 Standard) is locked behind a $30/month tier. For $10, you get a fast, responsive chatbot that's good for casual questions \u2014 but it lacks deep reasoning and coding capabilities.",
       "source_ids": [
         "xai-pricing",
         "xai-grok-plans"
@@ -170,15 +220,15 @@
       "verdict": "",
       "rank_display": "**\\#4**",
       "provider_plan": "**Grok** (SuperGrok Lite)",
-      "best_discount": "—",
-      "free_credits_short": "—",
-      "batch_short": "—"
+      "best_discount": "\u2014",
+      "free_credits_short": "\u2014",
+      "batch_short": "\u2014"
     }
   ],
   "description": "This analysis evaluates subscription-based AI access plans within a tight $10 monthly budget. Several providers offer entry-level subscriptions at this price point, and some deliver surprising value.",
-  "scope_note": "Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers are not listed here — see the [Free Rankings](free-rankings.md) for those.",
+  "scope_note": "Only providers with recurring monthly subscriptions are included. Pay-as-you-go API providers are not listed here \u2014 see the [Free Rankings](free-rankings.md) for those.",
   "ranking_direction": "best value for money (Best) to least capability per dollar (Worst)",
-  "conclusion": "At the $10 price point, **OpenCode Go** is the clear winner — no other provider offers a 6x value multiplier on open flagship models. **MiMo Lite** is the runner-up if you want direct access to a frontier model with a massive context window for even less. **ChatGPT Go** is a solid everyday option if you prefer OpenAI's ecosystem and don't mind ads.",
+  "conclusion": "At the $10 price point, **OpenCode Go** is the clear winner \u2014 no other provider offers a 6x value multiplier on open flagship models. **MiMo Lite** is the runner-up if you want direct access to a frontier model with a massive context window for even less. **ChatGPT Go** is a solid everyday option if you prefer OpenAI's ecosystem and don't mind ads.",
   "summary_columns": [
     {
       "key": "rank_display",
