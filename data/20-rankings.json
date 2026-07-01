@@ -3,7 +3,7 @@
   "page": "20-rankings",
   "title": "Comparative Analysis of AI Model Access Providers (Normalized to a $20 Budget)",
   "budget_threshold_usd": 20,
-  "last_updated": "2026-06-14",
+  "last_updated": "2026-07-01",
   "scope": "subscription",
   "entries": [
     {
@@ -289,7 +289,7 @@
           "context_window": "200K"
         },
         {
-          "name": "Claude Sonnet",
+          "name": "Claude Sonnet 5",
           "tier": "mid",
           "context_window": "200K"
         }

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "page": "api-pricing",
   "title": "API Pricing Guide for Production AI Applications",
-  "last_updated": "2026-06-14",
+  "last_updated": "2026-07-01",
   "scope": "api",
   "entries": [
     {
@@ -22,24 +22,24 @@
         }
       ],
       "pricing": {
-        "flagship_input_per_m": 0.44,
+        "flagship_input_per_m": 0.435,
         "flagship_output_per_m": 0.87,
         "cached_input_discount": "99%",
-        "cached_input_price_per_m": 0.004,
+        "cached_input_price_per_m": 0.003625,
         "batch_discount": null,
         "free_tier": "Free chat at chat.deepseek.com (no API free tier)",
         "models_detail": [
           {
             "name": "V4-Pro",
-            "input_per_m": 0.44,
+            "input_per_m": 0.435,
             "output_per_m": 0.87,
-            "cached_per_m": 0.004
+            "cached_per_m": 0.003625
           },
           {
             "name": "V4-Flash",
             "input_per_m": 0.14,
             "output_per_m": 0.28,
-            "cached_per_m": 0.003
+            "cached_per_m": 0.0028
           }
         ]
       },
@@ -248,42 +248,53 @@
       "category": "api",
       "models": [
         {
+          "name": "Claude Fable 5",
+          "tier": "flagship",
+          "context_window": "200K"
+        },
+        {
           "name": "Claude Opus 4.8",
           "tier": "flagship",
           "context_window": "200K"
         },
         {
-          "name": "Claude Sonnet 4.6",
+          "name": "Claude Sonnet 5",
           "tier": "mid",
           "context_window": "200K"
         }
       ],
       "pricing": {
-        "flagship_input_per_m": 5.0,
-        "flagship_output_per_m": 25.0,
+        "flagship_input_per_m": 10.0,
+        "flagship_output_per_m": 50.0,
         "cached_input_discount": "90%",
         "cached_input_price_per_m": null,
-        "batch_discount": "available",
+        "batch_discount": "50%",
         "free_tier": "None for API",
         "models_detail": [
+          {
+            "name": "Fable 5",
+            "input_per_m": 10.0,
+            "output_per_m": 50.0
+          },
           {
             "name": "Opus 4.8",
             "input_per_m": 5.0,
             "output_per_m": 25.0
           },
           {
-            "name": "Sonnet 4.6",
-            "input_per_m": 3.0,
-            "output_per_m": 15.0
+            "name": "Sonnet 5",
+            "input_per_m": 2.0,
+            "output_per_m": 10.0
           }
         ]
       },
       "ranking_class": "good_value",
-      "notes": "90% cached read discount is among the best. Unique persistent cache (write-cache) pays for itself in high-context recurring workloads. Best-in-class for coding and structured reasoning.",
+      "notes": "New Fable 5 model ($10/$50) designed for long-running agents. Sonnet 5 has introductory pricing of $2/$10 through August 31, 2026 ($3/$15 standard). 90% cached read discount is among the best. 50% batch discount. Unique persistent cache (write-cache) pays for itself in high-context recurring workloads.",
       "limitations": [
-        "Most expensive output pricing (Opus at $25/M)",
+        "Most expensive output pricing (Fable 5 at $50/M)",
         "200K context limit",
         "No free API tier",
+        "Sonnet 5 introductory pricing reverts to $3/$15 after Aug 31 2026",
         "Cache write adds cost if context changes frequently"
       ],
       "source_ids": [
@@ -320,14 +331,19 @@
           "context_window": "128K"
         },
         {
+          "name": "GPT-5.5-pro",
+          "tier": "flagship",
+          "context_window": "128K"
+        },
+        {
           "name": "GPT-5.4",
           "tier": "flagship",
           "context_window": "128K"
         },
         {
-          "name": "GPT-5.3 Codex",
-          "tier": "mid",
-          "context_window": "1M"
+          "name": "GPT-5.4-mini",
+          "tier": "fast",
+          "context_window": "128K"
         }
       ],
       "pricing": {
@@ -344,17 +360,27 @@
             "output_per_m": 30.0
           },
           {
+            "name": "GPT-5.5-pro",
+            "input_per_m": 30.0,
+            "output_per_m": 180.0
+          },
+          {
             "name": "GPT-5.4",
             "input_per_m": 2.5,
             "output_per_m": 15.0
+          },
+          {
+            "name": "GPT-5.4-mini",
+            "input_per_m": 0.75,
+            "output_per_m": 4.5
           }
         ]
       },
       "ranking_class": "good_value",
-      "notes": "90% cached input discount brings GPT-5.4 to $0.25/M input \u2014 competitive with cheap models for repeated prompts. Most polished API ecosystem with best tool calling and structured output.",
+      "notes": "New GPT-5.5-pro ($30/$180) for advanced reasoning, and GPT-5.4-mini ($0.75/$4.50) as a fast/cheap option. 90% cached input discount brings GPT-5.4 to $0.25/M input. Most polished API ecosystem with best tool calling and structured output. GPT-5.3 Codex deprecated.",
       "limitations": [
-        "Most expensive per-token pricing",
-        "GPT-5.5 at $30/M output is prohibitive for high-volume use",
+        "GPT-5.5-pro at $180/M output is extremely expensive",
+        "Most expensive per-token pricing at flagship tier",
         "No free API tier"
       ],
       "source_ids": [
@@ -460,7 +486,7 @@
         {
           "name": "Grok Build 0.1",
           "tier": "mid",
-          "context_window": "128K"
+          "context_window": "256K"
         }
       ],
       "pricing": {
@@ -979,56 +1005,37 @@
           "context_window": "128K"
         },
         {
-          "name": "Large 3",
-          "tier": "mid",
-          "context_window": "128K"
-        },
-        {
           "name": "Small 4",
-          "tier": "fast",
-          "context_window": "128K"
-        },
-        {
-          "name": "Magistral",
-          "tier": "mid",
-          "context_window": "128K"
-        },
-        {
-          "name": "Devstral",
           "tier": "mid",
           "context_window": "128K"
         }
       ],
       "pricing": {
-        "flagship_input_per_m": 1.5,
-        "flagship_output_per_m": 7.5,
+        "flagship_input_per_m": 2.0,
+        "flagship_output_per_m": 6.0,
         "cached_input_discount": "none",
         "cached_input_price_per_m": null,
         "batch_discount": null,
-        "free_tier": "Leanstral (Lean 4 coding) is free. No general free API tier.",
+        "free_tier": "Consumer Pro plan at $14.99/mo includes Vibe agent and coding. No general free API tier.",
         "models_detail": [
           {
             "name": "Medium 3.5",
-            "input_per_m": 1.5,
-            "output_per_m": 7.5
-          },
-          {
-            "name": "Large 3",
-            "input_per_m": 0.5,
-            "output_per_m": 1.5
+            "input_per_m": 2.0,
+            "output_per_m": 6.0
           },
           {
             "name": "Small 4",
-            "input_per_m": 0.1,
-            "output_per_m": 0.3
+            "input_per_m": 2.0,
+            "output_per_m": 6.0
           }
         ]
       },
       "ranking_class": "limited_value",
-      "notes": "Every model is open-weight \u2014 self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
+      "notes": "Medium 3.5 and Small 4 now share identical pricing at $2/$6. New consumer plans available: Free, Pro ($14.99/mo), Team ($24.99/user/mo). Every model is open-weight \u2014 self-host for zero marginal cost. OCR 4, Voxtral TTS, and Codestral also available.",
       "limitations": [
         "No caching or batch discounts",
         "Fewest savings levers of any provider",
+        "Small 4 pricing increased significantly from previous gen",
         "Self-hosting requires significant GPU resources"
       ],
       "source_ids": [
