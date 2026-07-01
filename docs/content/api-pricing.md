@@ -9,8 +9,8 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 ### **🥇 1\. DeepSeek**
 
 * **Models:** DeepSeek-V4-Flash, DeepSeek-V4-Pro (1M context, 384K output)
-* **Flagship Pricing (per M tokens):** V4-Pro: $0.44 input / $0.87 output · V4-Flash: $0.14 input / $0.28 output
-* **Cached Input:** $0.004/M (V4-Pro) · $0.003/M (V4-Flash) — **up to 99% off**
+* **Flagship Pricing (per M tokens):** V4-Pro: $0.435 input / $0.87 output · V4-Flash: $0.14 input / $0.28 output
+* **Cached Input:** $0.003625/M (V4-Pro) · $0.0028/M (V4-Flash) — **up to 99% off**
 * **Free Tier:** Free chat at chat.deepseek.com (no API free tier)
 * **Why it's \#1:** The most extreme caching discount in the industry — 99% off cached input makes repeated prompts nearly free. V4-Pro competes with GPT-5.4 and Claude Sonnet on reasoning benchmarks. Cache hits at $0.003/M are unmatched.
 * **Limitations:** Only two models. No built-in tooling, guardrails, or enterprise features. Based in China — data sovereignty may be a concern. API only (no managed platform).
@@ -40,10 +40,10 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 
 ### **4\. Anthropic (Claude)**
 
-* **Models:** Claude Opus 4.8, Sonnet 4.6 (200K context)
-* **Flagship Pricing (per M tokens):** Sonnet 4.6: $3.00 input / $15.00 output · Opus 4.8: $5.00 input / $25.00 output
+* **Models:** Claude Fable 5, Opus 4.8, Sonnet 5 (200K context)
+* **Flagship Pricing (per M tokens):** Fable 5: $10.00 input / $50.00 output · Opus 4.8: $5.00 input / $25.00 output · Sonnet 5: $2.00 input / $10.00 output (intro pricing through Aug 2026, then $3/$15)
 * **Cached Input:** Read: **90% off**. Write: 25% premium for persistent cache.
-* **Batch API:** Available
+* **Batch API:** **50% off**
 * **Free Tier:** None for API
 * **Why it's \#4:** 90% cached read discount is among the best. Unique persistent cache (write-cache) pays for itself in high-context recurring workloads — cache once, reuse across requests. Best-in-class for coding and structured reasoning.
 * **Limitations:** Most expensive output pricing (Opus at $25/M). 200K context limit. No free API tier. Cache write adds cost if context changes frequently.
@@ -51,8 +51,8 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 
 ### **5\. OpenAI**
 
-* **Models:** GPT-5.5, GPT-5.4, GPT-5.3 Codex (128K–1M context)
-* **Flagship Pricing (per M tokens):** GPT-5.4: $2.50 input / $15.00 output · GPT-5.5: $5.00 input / $30.00 output
+* **Models:** GPT-5.5, GPT-5.5-pro, GPT-5.4, GPT-5.4-mini (128K context)
+* **Flagship Pricing (per M tokens):** GPT-5.5: $5.00 input / $30.00 output · GPT-5.5-pro: $30.00 input / $180.00 output · GPT-5.4: $2.50 input / $15.00 output · GPT-5.4-mini: $0.75 input / $4.50 output
 * **Cached Input:** **90% off**
 * **Batch API:** Available for non-urgent workloads
 * **Free Tier:** None for API
@@ -95,8 +95,8 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 
 ### **9\. OpenCode Zen**
 
-* **Models:** ~49 models across all major providers — GPT 5.5/5.4/5.3 Codex (17 OpenAI models), Claude Opus 4.8/Sonnet 4.6/Haiku (11 Anthropic models), Gemini 3.5 Flash/3.1 Pro (3 Google models), Qwen 3.7 Max/Plus, DeepSeek V4 Pro/Flash, GLM 5.1, MiniMax M2.7, Kimi K2.6, Grok Build 0.1, plus free models (MiMo-V2.5 Free, DeepSeek V4 Flash Free, Nemotron 3 Ultra Free)
-* **Flagship Pricing (per M tokens):** **Zero-markup pass-through** — DeepSeek V4-Flash/MiMo-V2.5: $0.28 · DeepSeek V4-Pro: $0.87 · Qwen 3.7 Plus: $3.00 · Kimi K2.6: $4.00 · Qwen 3.7 Max: $7.50 · GPT-5.4: $2.50/$15.00 · Claude Sonnet 4.6: $3.00/$15.00
+* **Models:** ~49 models across all major providers — GPT 5.5/5.5-pro/5.4/5.4-mini (17 OpenAI models), Claude Fable 5/Opus 4.8/Sonnet 5/Haiku (11 Anthropic models), Gemini 3.5 Flash/3.1 Pro (3 Google models), Qwen 3.7 Max/Plus, DeepSeek V4 Pro/Flash, GLM 5.1, MiniMax M2.7, Kimi K2.6, Grok Build 0.1, plus free models (MiMo-V2.5 Free, DeepSeek V4 Flash Free, Nemotron 3 Ultra Free)
+* **Flagship Pricing (per M tokens):** **Zero-markup pass-through** — DeepSeek V4-Flash/MiMo-V2.5: $0.28 · DeepSeek V4-Pro: $0.87 · Qwen 3.7 Plus: $3.00 · Kimi K2.6: $4.00 · Qwen 3.7 Max: $7.50 · GPT-5.4: $2.50/$15.00 · Claude Sonnet 5: $2.00/$10.00 (intro)
 * **Cached Input:** Passes through provider caching
 * **Batch API:** Not available
 * **Free Tier:** **4 free models** (MiMo-V2.5 Free, North Mini Code Free, Nemotron 3 Ultra Free, DeepSeek V4 Flash Free). $20 minimum deposit for paid models.
@@ -162,8 +162,8 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 
 ### **15\. Mistral**
 
-* **Models:** Medium 3.5, Large 3, Small 4, Magistral, Devstral (all open-weight — MIT/Apache 2.0)
-* **Flagship Pricing (per M tokens):** Medium 3.5: $1.50 input / $7.50 output · Large 3: $0.50 input / $1.50 output · Small 4: $0.10 input / $0.30 output
+* **Models:** Medium 3.5, Small 4 (all open-weight — MIT/Apache 2.0)
+* **Flagship Pricing (per M tokens):** Medium 3.5: $2.00 input / $6.00 output · Small 4: $2.00 input / $6.00 output
 * **Cached Input:** Not available
 * **Batch API:** Not available
 * **Free Tier:** Leanstral (Lean 4 coding) is free. No general free API tier.
@@ -180,7 +180,7 @@ Here is the ranking from **most savings incentives (Best)** to **fewest savings 
 | **\#1** | **DeepSeek** | 99% cache | Free chat | — |
 | **\#2** | **Z.ai** | 80% cache | Unlimited free model | 50% |
 | **\#3** | **Google** | 90% cache | Free tier + Gemma 4 | 50% |
-| **\#4** | **Anthropic** | 90% cache | — | Yes |
+| **\#4** | **Anthropic** | 90% cache | — | 50% |
 | **\#5** | **OpenAI** | 90% cache | — | Yes |
 | **\#6** | **MiniMax** | 85% cache | — | — |
 | **\#7** | **xAI** | 84% cache | $25/mo credits | 50% |
