@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "page": "api-pricing",
   "title": "API Pricing Guide for Production AI Applications",
-  "last_updated": "2026-06-14",
+  "last_updated": "2026-08-01",
   "scope": "api",
   "entries": [
     {
@@ -25,7 +25,7 @@
         "flagship_input_per_m": 0.44,
         "flagship_output_per_m": 0.87,
         "cached_input_discount": "99%",
-        "cached_input_price_per_m": 0.004,
+        "cached_input_price_per_m": 0.003625,
         "batch_discount": null,
         "free_tier": "Free chat at chat.deepseek.com (no API free tier)",
         "models_detail": [
@@ -33,7 +33,7 @@
             "name": "V4-Pro",
             "input_per_m": 0.44,
             "output_per_m": 0.87,
-            "cached_per_m": 0.004
+            "cached_per_m": 0.003625
           },
           {
             "name": "V4-Flash",
@@ -44,11 +44,11 @@
         ]
       },
       "ranking_class": "exceptional_value",
-      "notes": "The most extreme caching discount in the industry \u2014 99% off cached input makes repeated prompts nearly free. V4-Pro competes with GPT-5.4 and Claude Sonnet on reasoning benchmarks. Cache hits at $0.003/M are unmatched.",
+      "notes": "DeepSeek publishes V4-Pro at $0.435/M cache-miss input, $0.003625/M cache-hit input, and $0.87/M output; V4-Flash is $0.14/$0.0028/$0.28. The page also notes a future 2x peak-hour pricing policy.",
       "limitations": [
         "Only two models",
         "No built-in tooling/guardrails/enterprise features",
-        "Based in China \u2014 data sovereignty concern",
+        "Based in China — data sovereignty concern",
         "API only (no managed platform)"
       ],
       "source_ids": [
@@ -126,7 +126,7 @@
         ]
       },
       "ranking_class": "exceptional_value",
-      "notes": "Triple incentive \u2014 80% caching discount, 50% batch discount, AND a free unlimited model. The free tier alone (GLM-4.7-Flash) can handle serious workloads.",
+      "notes": "Triple incentive — 80% caching discount, 50% batch discount, AND a free unlimited model. The free tier alone (GLM-4.7-Flash) can handle serious workloads.",
       "limitations": [
         "Prices in CNY",
         "Platform primarily Chinese-language",
@@ -162,8 +162,8 @@
       "category": "api",
       "models": [
         {
-          "name": "Gemini 3.1 Pro",
-          "tier": "flagship",
+          "name": "Gemini 3.6 Flash",
+          "tier": "fast",
           "context_window": "1M"
         },
         {
@@ -175,45 +175,41 @@
           "name": "Gemini 3 Flash",
           "tier": "fast",
           "context_window": "1M"
-        },
-        {
-          "name": "Gemma 4",
-          "tier": "open",
-          "context_window": "128K"
         }
       ],
       "pricing": {
-        "flagship_input_per_m": 2.0,
-        "flagship_output_per_m": 12.0,
+        "flagship_input_per_m": 1.5,
+        "flagship_output_per_m": 7.5,
         "cached_input_discount": "90%",
-        "cached_input_price_per_m": null,
+        "cached_input_price_per_m": 0.15,
         "batch_discount": "50%",
         "free_tier": "Rate-limited free access on most Gemini models. Gemma 4 (open-source) is free.",
         "models_detail": [
           {
-            "name": "3.1 Pro",
-            "input_per_m": 2.0,
-            "output_per_m": 12.0
-          },
-          {
-            "name": "3.5 Flash",
+            "name": "Gemini 3.6 Flash",
             "input_per_m": 1.5,
-            "output_per_m": 9.0
+            "output_per_m": 7.5,
+            "cached_per_m": 0.15,
+            "batch_input_per_m": 0.75,
+            "batch_output_per_m": 3.75
           },
           {
-            "name": "3 Flash",
+            "name": "Gemini 3.5 Flash",
+            "input_per_m": 1.5,
+            "output_per_m": 9.0,
+            "cached_per_m": 0.15,
+            "batch_input_per_m": 0.75,
+            "batch_output_per_m": 4.5
+          },
+          {
+            "name": "Gemini 3 Flash",
             "input_per_m": 0.5,
             "output_per_m": 3.0
-          },
-          {
-            "name": "Gemma 4",
-            "input_per_m": 0,
-            "output_per_m": 0
           }
         ]
       },
       "ranking_class": "great_value",
-      "notes": "Stacked incentives \u2014 90% caching discount on Flash, 50% batch discount, generous free tier, and open-source Gemma 4. Media generation models (Imagen, Veo, Lyria) included.",
+      "notes": "Google currently highlights Gemini 3.6 Flash ($1.50/M input, $7.50/M output, $0.15/M cached input) with 50% Batch API pricing. Free-tier input and output remain available for supported models with data used to improve products.",
       "limitations": [
         "Free-tier data used for model improvement",
         "Prices double above 200K context on Pro models",
@@ -248,7 +244,7 @@
       "category": "api",
       "models": [
         {
-          "name": "Claude Opus 4.8",
+          "name": "Claude Opus 4.7",
           "tier": "flagship",
           "context_window": "200K"
         },
@@ -263,23 +259,27 @@
         "flagship_output_per_m": 25.0,
         "cached_input_discount": "90%",
         "cached_input_price_per_m": null,
-        "batch_discount": "available",
+        "batch_discount": "50%",
         "free_tier": "None for API",
         "models_detail": [
           {
-            "name": "Opus 4.8",
+            "name": "Opus 4.7",
             "input_per_m": 5.0,
-            "output_per_m": 25.0
+            "output_per_m": 25.0,
+            "cache_write_per_m": 6.25,
+            "cache_read_per_m": 0.5
           },
           {
             "name": "Sonnet 4.6",
             "input_per_m": 3.0,
-            "output_per_m": 15.0
+            "output_per_m": 15.0,
+            "cache_write_per_m": 3.75,
+            "cache_read_per_m": 0.3
           }
         ]
       },
       "ranking_class": "good_value",
-      "notes": "90% cached read discount is among the best. Unique persistent cache (write-cache) pays for itself in high-context recurring workloads. Best-in-class for coding and structured reasoning.",
+      "notes": "Anthropic lists Sonnet 4.6 and Opus 4.7 with 90% prompt-cache read discounts and 50% batch processing savings.",
       "limitations": [
         "Most expensive output pricing (Opus at $25/M)",
         "200K context limit",
@@ -307,13 +307,28 @@
       "provider_plan": "**Anthropic (Claude)**",
       "best_discount": "90%",
       "free_credits_short": "None for API",
-      "batch_short": "available"
+      "batch_short": "50%"
     },
     {
       "rank": 5,
       "provider": "OpenAI",
       "category": "api",
       "models": [
+        {
+          "name": "GPT-5.6 Sol",
+          "tier": "flagship",
+          "context_window": "long-context tier available"
+        },
+        {
+          "name": "GPT-5.6 Terra",
+          "tier": "flagship",
+          "context_window": "long-context tier available"
+        },
+        {
+          "name": "GPT-5.6 Luna",
+          "tier": "fast",
+          "context_window": "long-context tier available"
+        },
         {
           "name": "GPT-5.5",
           "tier": "flagship",
@@ -323,11 +338,6 @@
           "name": "GPT-5.4",
           "tier": "flagship",
           "context_window": "128K"
-        },
-        {
-          "name": "GPT-5.3 Codex",
-          "tier": "mid",
-          "context_window": "1M"
         }
       ],
       "pricing": {
@@ -339,22 +349,57 @@
         "free_tier": "None for API",
         "models_detail": [
           {
+            "name": "GPT-5.6 Sol",
+            "input_per_m": 5.0,
+            "cached_per_m": 0.5,
+            "cache_write_per_m": 6.25,
+            "output_per_m": 30.0,
+            "long_context_input_per_m": 10.0,
+            "long_context_cached_per_m": 1.0,
+            "long_context_cache_write_per_m": 12.5,
+            "long_context_output_per_m": 45.0
+          },
+          {
+            "name": "GPT-5.6 Terra",
+            "input_per_m": 2.0,
+            "cached_per_m": 0.2,
+            "cache_write_per_m": 2.5,
+            "output_per_m": 12.0,
+            "long_context_input_per_m": 4.0,
+            "long_context_cached_per_m": 0.4,
+            "long_context_cache_write_per_m": 5.0,
+            "long_context_output_per_m": 18.0
+          },
+          {
+            "name": "GPT-5.6 Luna",
+            "input_per_m": 0.2,
+            "cached_per_m": 0.02,
+            "cache_write_per_m": 0.25,
+            "output_per_m": 1.2,
+            "long_context_input_per_m": 0.4,
+            "long_context_cached_per_m": 0.04,
+            "long_context_cache_write_per_m": 0.5,
+            "long_context_output_per_m": 1.8
+          },
+          {
             "name": "GPT-5.5",
             "input_per_m": 5.0,
+            "cached_per_m": 0.5,
             "output_per_m": 30.0
           },
           {
             "name": "GPT-5.4",
             "input_per_m": 2.5,
+            "cached_per_m": 0.25,
             "output_per_m": 15.0
           }
         ]
       },
       "ranking_class": "good_value",
-      "notes": "90% cached input discount brings GPT-5.4 to $0.25/M input \u2014 competitive with cheap models for repeated prompts. Most polished API ecosystem with best tool calling and structured output.",
+      "notes": "OpenAI added the GPT-5.6 family. Sol carries the same $5/$30 short-context flagship pricing as GPT-5.5 but adds cache-write and long-context tiers; Terra and Luna provide cheaper tiers. Cached input remains a 90% discount.",
       "limitations": [
-        "Most expensive per-token pricing",
-        "GPT-5.5 at $30/M output is prohibitive for high-volume use",
+        "Most expensive per-token pricing at the top tier",
+        "GPT-5.6 Sol long-context output reaches $45/M",
         "No free API tier"
       ],
       "source_ids": [
@@ -420,7 +465,7 @@
       "ranking_class": "good_value",
       "notes": "85% caching discount plus 50% promo pricing on M3. 1M context window. Native multimodal (text, image, video, audio).",
       "limitations": [
-        "Prices in CNY \u2014 international billing may vary",
+        "Prices in CNY — international billing may vary",
         "M3 promo pricing may not be permanent",
         "Limited international ecosystem"
       ],
@@ -453,6 +498,11 @@
       "category": "api",
       "models": [
         {
+          "name": "Grok 4.5",
+          "tier": "flagship",
+          "context_window": "500K"
+        },
+        {
           "name": "Grok 4.3",
           "tier": "flagship",
           "context_window": "1M"
@@ -460,32 +510,48 @@
         {
           "name": "Grok Build 0.1",
           "tier": "mid",
-          "context_window": "128K"
+          "context_window": "256K"
         }
       ],
       "pricing": {
-        "flagship_input_per_m": 1.25,
-        "flagship_output_per_m": 2.5,
-        "cached_input_discount": "84%",
-        "cached_input_price_per_m": 0.2,
+        "flagship_input_per_m": 2.0,
+        "flagship_output_per_m": 6.0,
+        "cached_input_discount": "85%",
+        "cached_input_price_per_m": 0.3,
         "batch_discount": "20-50%",
         "free_tier": "$25/mo free credits for team orgs",
         "models_detail": [
           {
+            "name": "Grok 4.5",
+            "input_per_m": 2.0,
+            "cached_per_m": 0.3,
+            "output_per_m": 6.0,
+            "long_context_input_per_m": 4.0,
+            "long_context_cached_per_m": 0.6,
+            "long_context_output_per_m": 12.0
+          },
+          {
             "name": "Grok 4.3",
             "input_per_m": 1.25,
+            "cached_per_m": 0.2,
             "output_per_m": 2.5,
-            "cached_per_m": 0.2
+            "long_context_input_per_m": 2.5,
+            "long_context_cached_per_m": 0.4,
+            "long_context_output_per_m": 5.0
           },
           {
             "name": "Grok Build 0.1",
             "input_per_m": 1.0,
-            "output_per_m": 2.0
+            "cached_per_m": 0.2,
+            "output_per_m": 2.0,
+            "long_context_input_per_m": 2.0,
+            "long_context_cached_per_m": 0.4,
+            "long_context_output_per_m": 4.0
           }
         ]
       },
       "ranking_class": "good_value",
-      "notes": "$25/mo free credits is the strongest recurring free credit among Western providers. 84% caching discount and batch savings stack. Built-in tools: web search, X/Twitter search, code execution.",
+      "notes": "xAI now lists Grok 4.5 as the latest text model, with 500K context and $2.00/M input, $0.30/M cached input, and $6.00/M output before long-context pricing.",
       "limitations": [
         "Smaller ecosystem",
         "Tool calls cost extra ($5/1K calls)",
@@ -510,7 +576,7 @@
       "verdict": "",
       "rank_display": "**\\#7**",
       "provider_plan": "**xAI (Grok)**",
-      "best_discount": "84%",
+      "best_discount": "85%",
       "free_credits_short": "$25/mo free credits for team orgs",
       "batch_short": "20-50%"
     },
@@ -629,7 +695,7 @@
       "notes": "Zero markup means you get provider-level pricing without the middleman. Volume discounts available. 4 free models with no limits. Single API key for every major provider.",
       "limitations": [
         "$20 minimum top-up",
-        "Not a model provider \u2014 passes through underlying pricing",
+        "Not a model provider — passes through underlying pricing",
         "No batch API"
       ],
       "source_ids": [
@@ -757,7 +823,7 @@
         ]
       },
       "ranking_class": "moderate_value",
-      "notes": "Multiple pricing tiers that stack \u2014 Standard/Flex/Batch/Reserved. 50% batch discount. Enterprise features (Guardrails, Knowledge Bases, prompt routing).",
+      "notes": "Multiple pricing tiers that stack — Standard/Flex/Batch/Reserved. 50% batch discount. Enterprise features (Guardrails, Knowledge Bases, prompt routing).",
       "limitations": [
         "Highest markup of any infrastructure provider",
         "Complex pricing structure",
@@ -804,7 +870,7 @@
         "cached_input_price_per_m": null,
         "batch_discount": null,
         "free_tier": "25+ free models (50 requests/day)",
-        "platform_fee": "5.5% (eliminated with BYOK \u2014 1M free requests/month)"
+        "platform_fee": "5.5% (eliminated with BYOK — 1M free requests/month)"
       },
       "ranking_class": "moderate_value",
       "notes": "25+ free models and BYOK eliminates the platform fee entirely. Auto-routing picks the cheapest/fastest provider. No minimum spend.",
@@ -876,7 +942,7 @@
       "notes": "Frontier-class model at extremely competitive prices. MiMo-V2.5 at ~$0.28/M blended rivals models costing 10x more. Available through Alibaba Cloud Bailian.",
       "limitations": [
         "No caching or batch incentives documented",
-        "No direct API \u2014 available only through Alibaba Cloud or third-party routers",
+        "No direct API — available only through Alibaba Cloud or third-party routers",
         "Newer platform with smaller ecosystem"
       ],
       "source_ids": [
@@ -1025,7 +1091,7 @@
         ]
       },
       "ranking_class": "limited_value",
-      "notes": "Every model is open-weight \u2014 self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
+      "notes": "Every model is open-weight — self-host for zero marginal cost. Small 4 at $0.10/$0.30 is excellent for high-volume tasks. Fine-tuning and classifier APIs included.",
       "limitations": [
         "No caching or batch discounts",
         "Fewest savings levers of any provider",
@@ -1055,10 +1121,10 @@
       "batch_short": null
     }
   ],
-  "description": "This guide compares pay-as-you-go API pricing across AI model providers, focused on **production usage** \u2014 applications, services, and pipelines that call AI models programmatically at scale. What matters here is not just per-token cost, but **value incentives** \u2014 discounts, free credits, caching bonuses, and savings levers that reduce your effective spend.",
-  "scope_note": "Prices are per million tokens unless noted. All prices sourced from official provider pages. Prices may change \u2014 always verify against the provider's current pricing page.",
+  "description": "This guide compares pay-as-you-go API pricing across AI model providers, focused on **production usage** — applications, services, and pipelines that call AI models programmatically at scale. What matters here is not just per-token cost, but **value incentives** — discounts, free credits, caching bonuses, and savings levers that reduce your effective spend.",
+  "scope_note": "Prices are per million tokens unless noted. All prices sourced from official provider pages. Prices may change — always verify against the provider's current pricing page.",
   "ranking_direction": "most savings incentives (Best) to fewest savings levers (Worst)",
-  "conclusion": "Most production apps should **cache aggressively** \u2014 a 90% cache discount on Claude or GPT can be cheaper than a budget model without caching. Batch eligible workloads for 50% off. Use free tiers for experimentation. Route simple tasks to cheap models and escalate complex reasoning to frontier models only when needed. The best provider is the one whose incentives match your usage pattern.",
+  "conclusion": "Most production apps should **cache aggressively** — a 90% cache discount on Claude or GPT can be cheaper than a budget model without caching. Batch eligible workloads for 50% off. Use free tiers for experimentation. Route simple tasks to cheap models and escalate complex reasoning to frontier models only when needed. The best provider is the one whose incentives match your usage pattern.",
   "summary_columns": [
     {
       "key": "rank_display",
